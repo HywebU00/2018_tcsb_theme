@@ -1,0 +1,305 @@
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    @include screen('mobile') {
+        background: #FFF;
+    }
+}
+.mpwrapper {
+    .header {
+        position: absolute;
+        z-index: 999;
+        text-align: center;
+        width: 100%;
+        box-shadow: none;
+        @include screen('mobile') {
+            position: fixed;
+            box-shadow: 0px 2px 5px RGBA(0, 0, 0, 0.3);
+            background-color: #fff;
+        }
+        >.container {
+            max-width: 1100px;
+        }
+    }
+}
+.themewrapper {
+    .header {
+        position: relative;
+    }
+}
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    // outline: 1px solid red;
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+    @media (min-width: 992px) and (max-width:1200px) {
+        width: 980px;
+    }
+}
+.main {
+    margin: 0 auto;
+    padding: 0; // max-width: $container-max;
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    // background-color:#fff;
+    overflow: hidden;
+    position: relative;
+    @include screen('mobile') {
+        padding-top: 55px;
+    }
+    .accesskey {
+        color: $color-green;
+    }
+    // 內頁標題設定
+    h1 {
+        line-height: 1.25em;
+        &.title {
+            color: $primaryColor;
+            border-bottom: 1px solid $primaryColor;
+            padding: 0px 0px 6px;
+            margin: 20px 0;
+            font-size: 1.625em;
+        }
+    }
+    >section {
+        padding: 0;
+        .container {
+            padding: 1em 30px 1em;
+            @include box-sizing;
+            @include screen('xs_mobile') {
+                @include gutter(30px); //gutter 代表左右要留白
+            }
+            .col-xs-12 {
+                padding-bottom: 25px;
+            }
+        }
+    }
+}
+.more {
+    text-align: center;
+    clear: both;
+    float: none;
+    @include screen('mobile') {
+        text-align: center;
+    }
+    a {
+        display: inline-block;
+        background: #fff;
+        color: $primaryColor;
+        width: auto;
+        text-align: center;
+        padding: .5em 2em;
+        border: 1px solid $primaryColor;
+        transition: .5s;
+        // @include transition(all, .3s, ease-out);
+        &:hover,
+        &:focus {
+            background-color: $primaryColor;
+            color: #fff;
+        }
+    }
+}
+.hidden {
+    display: none;
+}
+@include screen('xs_mobile') {
+    .hidden-xs {
+        display: none;
+    }
+}
+a:focus {
+    box-shadow: 0 0 0 2px $color-yellow inset;
+}
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    padding-top: 2em;
+    position: relative;
+    @include screen('mobile') {
+        padding-top: 5em;
+    }
+    &:before {
+        content: '';
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        background-color: $secondaryColor;
+        background-image: linear-gradient(135deg, $primaryColor, $lightColor 100%);
+    }
+    >.container {
+        @include gutter(60px); //gutter 代表左右要留白
+    }
+}
+/* ------------------說明區塊*/
+.explanation {
+    clear: both;
+    background-color: lighten($primaryColor, 47);
+    padding: 0;
+    margin: 0 0 20px;
+    line-height: 1.8em;
+    @include border-radius(5px);
+}
+/*------------------------------------------bottomfunction*/
+.bottomfunction {
+    overflow: hidden;
+    padding: 10px 10px 10px 20px;
+    clear: both;
+    // border-top: 1px solid $primaryColor;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    @include box-sizing;
+    @include screen('tablet') {
+        padding: 15px 10px 15px 20px;
+    }
+    .share2 {
+        float: left;
+        width: 320px;
+        @include screen('tablet') {
+            clear: both;
+            margin: 0 0 20px 0;
+        }
+        span {
+            float: left;
+            margin: 8px 10px 0 0px;
+            @media (max-width: 350px) {
+                margin: 3px 10px 0 0px
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                margin: 0 5px 0 0;
+                float: left;
+                a {
+                    display: block;
+                    background-color: #999;
+                    border-radius: 5px;
+                    width: 35px;
+                    height: 35px;
+                    &.fb {
+                        background-color: #3b5997
+                    }
+                    &.google {
+                        background-color: #df2f2f
+                    }
+                    &.twitter {
+                        background-color: #55acec
+                    }
+                    &.line {
+                        background-color: #00c214
+                    }
+                    &.forward {
+                        background-color: #87cd27
+                    }
+                    &.print {
+                        background-color: #5c64b5
+                    }
+                }
+                img {
+                    width: 35px;
+                    height: 35px;
+                    @media (max-width: 350px) {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+    .data {
+        float: right;
+        margin: 8px 0 0;
+        @include screen('tablet') {
+            clear: both;
+            float: none;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 0 15px 5px 0;
+                display: inline-block;
+                border-right: 1px solid #999;
+                padding: 0 15px 0 0;
+                @include screen('xs_mobile') {
+                    display: block;
+                    border: none;
+                    margin: 0 0 7px 0;
+                    background-image: url(../images/link_icon01.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 7px;
+                    padding: 0 0 0 15px;
+                }
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    &:hover {
+                        color: #C00;
+                        text-decoration: underline
+                    }
+                }
+                &:last-child {
+                    border-right: none;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+//首頁h2設定
+//h2淺綠底
+.block01_h2 {
+    background-color: $secondaryColor;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: .05em;
+    margin: 0 0 10px 0;
+}
+//h2 有底線
+.block02_h2 {
+    font-size: 1.875em;
+    display: inline-block;
+    position: relative;
+    padding: 10px 0;
+    margin: 0 0 50px;
+    background-image: url('../images/h2_line.gif');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    // &:before {
+    //     content: '';
+    //     width: 50px;
+    //     height: 2px;
+    //     position: absolute;
+    //     background-color: $lightColor;
+    //     bottom: -20px;
+    //     left: 35%;
+    // }
+}
+//h2深綠底
+.block03_h2 {
+    background-color: $primaryColor;
+    color: #fff;
+    margin: -50px 0 10px 0;
+    padding: 20px;
+    text-align: center;
+    font-weight: 400;
+}

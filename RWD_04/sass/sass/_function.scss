@@ -1,0 +1,48 @@
+$function_color:#888;
+//可自訂顏色，或是自帶既有變數，但請注意背景色與字的對比度
+//範例：$function_color:#000;
+//icon基本設定
+%function_before {
+    vertical-align: middle;
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .2em;
+    display: inline-block;
+}
+.function {
+    margin: 0px 0 10px;
+    overflow: hidden;
+   
+    @include box-sizing();
+    ul {
+        padding: 0;
+        margin: 0;
+        text-align: right;
+        li {
+            list-style: none;
+            display: inline-block;
+            margin:0 0px 0px 0;
+            button,
+            a {
+                font-size: .813em;
+                display: block;
+                padding:0;
+                width: 33px;
+                height: 33px;
+                background: $function_color;
+                
+                color:#FFF;
+                @include border-radius(50%);
+                &:hover,
+                &:focus{
+                    background: darken($function_color, 20);
+                    
+                }
+                &:focus{
+                    box-shadow: 0 0 0 2px $linkColor ;
+                }
+            } 
+        }
+    }
+}

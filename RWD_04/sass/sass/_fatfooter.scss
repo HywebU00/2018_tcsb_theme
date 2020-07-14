@@ -1,0 +1,210 @@
+$fatBgColor: $primaryColor; //fatFooter 底色
+$fatTextColor: #FFF; //fatFooter 連結顏色
+
+.fatfooter {
+    @include clearfix;
+    @include make-fatfooter($fatfooter-length, 100%);
+    @include screen('mobile') {
+        display: none;
+    }
+}
+
+.fatfooter {
+    @include clearfix;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    // background: $fatBgColor;
+    width: 100%;
+
+    .container {
+        position: relative;
+        overflow: hidden;
+        @include box-sizing();
+        @include gutter(0);
+    }
+
+    // 按鈕
+    .btn-fatfooter {
+        font-size: .813em;
+        cursor: pointer;
+        display: block;
+        min-width: 6em;
+        color: #FFF;
+        border: none;
+        background: #468695;
+        position: absolute;
+        right: 3%;
+        top:2px;
+        z-index: 990;
+        text-indent: -9999px;
+        border-radius: 4px 4px 0 0;
+        box-shadow: none;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #FFF;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(-45deg);
+            left: 50%;
+            top: 12px;
+            margin-left: -6px;
+            transition: .3s ease-out;
+        }
+        &:hover{
+            background-color: $primaryColor;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            &:before {
+                transform: rotate(-45deg);
+               top: 12px;
+            }
+        }
+        
+        &:focus {
+            background-color: #468695;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            &:before {
+                 transform: rotate(-45deg);
+                top:12px;
+            }
+        }
+        &.open {
+            &:before {
+                transform: rotate(-45deg);
+                top: 12px;
+            }
+            &:hover{
+                &:before {
+                    transform: rotate(-45deg);
+                    top: 12px;
+                }
+            }
+            &:focus {
+                &:before {
+                    transform: rotate(135deg);
+                    top: 5px;
+                }
+            }
+        }
+    }
+
+    nav {
+        color: #fff;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 60px 0 0 1%;
+        @include box-sizing(border-box);
+
+        ul {
+            @include li-reset;
+            width: 100%;
+
+            @include screen('mobile') {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+
+            li {
+                display: inline-block; // outline: 1px solid red;
+                text-align: left;
+                vertical-align: top;
+                margin: 0 0 1% -5px;
+                line-height: 2.6em; // margin:$fatFooterliMargin;
+                letter-spacing: .05em;
+                font-size: 1.063em;
+                @include box-sizing;
+
+                @include screen('mobile') {
+                    display: block;
+                }
+
+                >a {
+                    text-align: left;
+                    line-height: 1.35em;
+                    display: block;
+                    padding: 5px 15px;
+                    color: #fff;
+                    @include box-sizing;
+                   font-weight: 500;
+                    font-size: 1.1em;
+
+                    &:hover,
+                    &:focus {
+                        box-shadow: none;
+                        background-color:darken($primaryColor, 11);
+                        color: #fff;
+
+                    }
+                }
+
+                ul {
+                    padding: 0;
+                    margin-top: 5px;
+                    overflow: hidden;
+
+                    @media (max-width: 767px) {
+                        width: auto;
+                        padding-left: 5%;
+                    }
+
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        font-size: 1em;
+
+                        a {
+                            display: block;
+                            @include aSetting_nocolor;
+                            font-weight: normal;
+                            text-align: left;
+                            text-decoration: none;
+                            font-size: .938em;
+                            font-weight: normal;
+                            line-height: 1.4em;
+                            padding: 5px 15px;
+                            background: none;
+                            @include box-sizing(border-box);
+                            border-bottom: none;
+                            color: #eee;
+                            
+                            &:hover,
+                            &:focus {
+                                background-color: transparent;
+                                background-color:darken($primaryColor, 11);
+                        color: #fff;
+
+                            }
+                        }
+                    }
+
+                    //第三層關閉
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
