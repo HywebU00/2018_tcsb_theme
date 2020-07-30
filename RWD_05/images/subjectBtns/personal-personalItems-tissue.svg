@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+        <path id="a" d="M0 0h56v20.366c0 .833-.865 1.508-1.931 1.508H1.93C.865 21.874 0 21.2 0 20.366V0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="50" cy="50" r="50" fill="#F4EEF1"/>
+        <path fill="#E1C5D9" fill-rule="nonzero" d="M62.426 39.755h11.2c.871 0 1.634.592 1.864 1.445L78 50.537H22l2.51-9.337a1.935 1.935 0 0 1 1.862-1.445h11.2"/>
+        <path fill="#2C2F38" fill-rule="nonzero" d="M63.517 45.637H36.483a.973.973 0 0 1-.966-.98c0-.542.433-.981.966-.981h27.034c.533 0 .966.439.966.98 0 .542-.433.98-.966.98z"/>
+        <path fill="#FFF" fill-rule="nonzero" d="M38.44 45.637l-3.862-15.058H47.13v1.964l18.345-1.964-3.862 15.058z"/>
+        <g transform="translate(22 50.537)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/>
+            <path fill="#9A3D81" fill-rule="nonzero" d="M0 4.9s2.897 9.803 28 9.803 28 10.016 28 10.016v-3.155S53.103 9.802 28 9.802 0 0 0 0v4.9z" mask="url(#b)"/>
+        </g>
+        <g fill="#F4EEF1" fill-rule="nonzero">
+            <path d="M68.345 55.438h-5.793a.973.973 0 0 1-.966-.98c0-.541.432-.98.966-.98h5.793c.533 0 .965.439.965.98 0 .542-.432.98-.965.98zM74.138 55.438h-1.931a.973.973 0 0 1-.966-.98c0-.541.433-.98.966-.98h1.931c.533 0 .965.439.965.98 0 .542-.432.98-.965.98z"/>
+        </g>
+        <path fill="#F1F1F1" d="M34.906 30.653l11.232 8.213 1.126-8.213z"/>
+    </g>
+</svg>

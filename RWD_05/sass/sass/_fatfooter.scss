@@ -1,0 +1,199 @@
+$fatBgColor:#f7f9f9; //fatFooter 底色
+$fatTextColor: #FFF; //fatFooter 連結顏色
+.fatfooter {
+    @include clearfix;
+    @include make-fatfooter($fatfooter-length, 100%);
+    @include screen('mobile') {
+        display: none;
+    }
+}
+.fatfooter {
+    @include clearfix;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    // background: $fatBgColor;
+    width: 100%;
+    .container {
+        position: relative;
+        overflow: hidden;
+        @include box-sizing();
+        @include gutter(60px);
+    }
+    // 按鈕
+    .btn-fatfooter {
+        font-size: .813em;
+        cursor: pointer;
+        display: block;
+        width: 63px;
+        height: 60px;
+        color: #FFF;
+        border: none;
+        @include gradient(#add34d, #22b056, vertical);
+        position: absolute;
+        right: 30px;
+        top: 0;
+        z-index: 990;
+        text-indent: -9999px;
+        border-radius: 0;
+        box-shadow: none;
+        &:before {
+            content: "";
+            position: absolute;
+            background-image: url('../images/more_icon03.png');
+            background-position: center top;
+            width: 7px;
+            height: 26px;
+            left: 45%;
+            top: 20px;
+            display: block;
+            transition: .3s ease-out;
+        }
+        &:hover {
+            @include gradient(#add34d, #22b056, vertical);
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            // &:before {
+            //     content: "";
+            //     position: absolute;
+            //     transform: rotate(180deg);
+            //     bottom: 20px;
+            //     left: 45%;
+            //     top: auto;
+            // }
+        }
+        &:focus {
+            background-color: $linkColor;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            // box-shadow: none;
+            outline:2px solid $color-yellow;
+            border: none;
+            &:before {
+                top: 20px;
+                left: 45%;
+                
+            }
+        }
+        &.open {
+            &:before {
+               transform: rotate(0);
+                bottom: 20px;
+                left: 45%;
+                top: auto;
+            }
+            &:hover {
+                &:before {
+                   transform: rotate(0);
+                bottom: 20px;
+                left: 45%;
+                top: auto;
+                }
+            }
+            &:focus {
+                &:before {
+                    bottom: auto;
+                    left: 45%;
+                    top: 20px;
+                     transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    nav {
+        color: #fff;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 70px 0 0 0;
+        @include box-sizing(border-box);
+        ul {
+            @include li-reset;
+            width: 100%;
+            @include screen('mobile') {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+            li {
+                display: inline-block; // outline: 1px solid red;
+                text-align: left;
+                vertical-align: top;
+                margin: 0 0 1% -5px;
+                line-height: 2.6em; // margin:$fatFooterliMargin;
+                letter-spacing: .05em;
+                font-size: 1.063em;
+                @include box-sizing;
+                @include screen('mobile') {
+                    display: block;
+                }
+                >a {
+                    text-align: left;
+                    line-height: 1.35em;
+                    display: block;
+                    padding: 5px 15px;
+                    color: #000;
+                    font-weight: 700;
+                    @include box-sizing;
+                    &:hover,
+                    &:focus {
+                        box-shadow: none;
+                        background-color: $linkColor;
+                        color: #fff;
+                    }
+                }
+                ul {
+                    padding: 0;
+                    margin-top: 5px;
+                    overflow: hidden;
+                    @media (max-width: 767px) {
+                        width: auto;
+                        padding-left: 5%;
+                    }
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        font-size: 1em;
+                        a {
+                            display: block;
+                            @include aSetting_nocolor;
+                            font-weight: normal;
+                            text-align: left;
+                            text-decoration: none;
+                            font-size: .938em;
+                            font-weight: normal;
+                            line-height: 1.4em;
+                            padding: 5px 15px;
+                            background: none;
+                            @include box-sizing(border-box);
+                            border-bottom: none;
+                            color: #333;
+                            &:hover,
+                            &:focus {
+                                background-color: transparent;
+                                background-color: $linkColor;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    //第三層關閉
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
