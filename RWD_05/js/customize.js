@@ -51,7 +51,7 @@ $(function() {
         speed: 3000,
         autoplaySpeed: 5000,
         autoplay: true,
-        // fade: true,
+        fade: true,
         cssEase: 'ease'
     });
     //bigpicture
