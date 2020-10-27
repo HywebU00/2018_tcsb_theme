@@ -2845,28 +2845,29 @@
                 overflow: hidden;
             }
             .taiwan {
-                position: absolute;
+                // position: absolute;
                 width: 360px;
                 height: 477px;
-                top:20px;
-                left: 0;
-                @include screen('tablet') {
-                    position: relative;
-                    margin: 20px auto;
-                }
-                @media(max-width: 600px) {
-                    float: none;
-                }
-                @media(max-width: 360px) {
+                margin: 20px auto;
+               
+                @media(max-width: 400px) {
                     img {
-                        width: 88%;
+                        width: 80%;
                     }
                 }
             }
             .set_point {
                 position: absolute;
                 bottom: 50px;
-                left: 280px;
+                right: 100px;
+                
+                @media(max-width: 600px) {
+                     right: 30px;
+                }
+                 @media(max-width: 400px){
+                       right: 0;
+                      
+                 }
                 ul {
                     margin: 0;
                     padding: 0;
@@ -2898,22 +2899,6 @@
                             }
                         }
                     }
-                }
-                &:before {
-                    content: '';
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    background-color: #265fa9;
-                    position: absolute;
-                    left: -18px;
-                    top: 7px;
-                }
-                @media(max-width: 600px) {
-                    top: 40%;
-                    right: 20px;
-                    left: auto;
-                    bottom: auto;
                 }
             }
             .explain {
