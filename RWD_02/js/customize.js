@@ -806,3 +806,13 @@ $(function() {
         $('.list_content .tabSet').hide()
     })
 })
+// 地圖選單
+$(function(){
+    $('.menulist>ul>li').mouseover(function(){
+        $('.menulist>ul>li ul').stop().slideDown();
+        $(this).parents('.menulist').siblings('.menulist').find('ul ul').hide();
+    });
+    $('.menulist>ul>li').mouseout(function(){
+        $('.menulist>ul>li ul').stop().slideUp();
+    })
+})

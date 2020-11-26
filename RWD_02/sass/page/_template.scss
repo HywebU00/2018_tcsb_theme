@@ -59,7 +59,7 @@ body {
     overflow: hidden;
     position: relative;
     @include screen('mobile') {
-        padding-top: 55px;
+        padding-top: 35px;
     }
     .accesskey {
         color: #fafafa;
@@ -78,7 +78,7 @@ body {
     >section {
         padding: 0;
         .container {
-            padding: 1em 30px 2em;
+            padding: 1em 30px 1em;
             @include box-sizing;
             @include screen('xs_mobile') {
                 @include gutter(30px); //gutter 代表左右要留白
