@@ -1979,12 +1979,17 @@
                 position: absolute;
                 top: 28%;
                 left: 70.5%;
-                @include screen('notebook') {
+                @media(max-width: 900px) {
                     left: 70.1%;
                     top: 27.5%;
                 }
                 ul {
                     li {
+                        @media(max-width:1199px) {
+                            img {
+                                width: 80%;
+                            }
+                        }
                         @media(max-width: 900px) {
                             img {
                                 width: 75%;
