@@ -173,6 +173,9 @@
     //點點
     .slick-dots {
         bottom: 20px !important;
+        @include screen('mobile'){
+            bottom:5px !important;
+        }
     }
     // .slick-dots li {
     //     width: 45px;

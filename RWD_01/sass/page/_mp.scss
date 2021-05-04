@@ -174,24 +174,9 @@
     //點點
     .slick-dots {
         bottom: 20px !important;
-        // @include screen('notebook') {
-        //     bottom: 110px !important;
-        //     left: 30px !important;
-        // }
-        // @include screen('tablet') {
-        //     bottom: 80px !important;
-        //     left: 30px !important;
-        // }
-        // @media(max-width: 900px) {
-        //     left: 20px !important;
-        // }
-        // @include screen('mobile') {
-        //     bottom: 10px !important;
-        //     left: 0px !important;
-        // }
-        // @media(max-width: 500px) {
-        //     left: -10px !important;
-        // }
+        @include screen('mobile'){
+            bottom:5px !important;
+        }
     }
     .slick-dots li {
         width: 45px;
