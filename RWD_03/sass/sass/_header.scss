@@ -128,8 +128,11 @@
         overflow: hidden;
         float: right;
         margin: 25px 10px 0 0;
-        // outline: 1px solid red;
         padding-right: 60px;
+        display: block;
+        @include screen('mobile'){
+            display: none;
+        }
         ul {
             float: right;
             padding: 0;
@@ -198,6 +201,7 @@
     right: 20px;
     z-index: 999;
     text-align: center;
+    display: none;
     @include box-sizing;
     &:before {
         content: '';

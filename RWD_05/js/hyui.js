@@ -98,6 +98,9 @@ $(function() {
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
+    _nav.clone().prependTo(_mArea);
+    _menu.clone().prependTo(_mArea);
+    _search.clone().prependTo(_body).addClass('m_search')
     // 切換PC/Mobile 選單
     function mobileMenu() {
         ww = _window.outerWidth();
@@ -108,10 +111,10 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
-            _menu.prependTo(_mArea);
-            _search.prependTo(_body);
-            _search.addClass('m_search');
+            // _nav.prependTo(_mArea);
+            // _menu.prependTo(_mArea);
+            // _search.prependTo(_body);
+            // _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
             });
@@ -190,7 +193,7 @@ $(function() {
     _window.bind("load resize", function(event) {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
-            search_mode = true;
+            // search_mode = true;
             mobileMenu();
         }, 50);
     });
@@ -201,8 +204,9 @@ $(function() {
     _searchCtrl.off().on('click', function(e) {
         if (!search_mode) {
             $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');
-            search_mode = true;
+           
             _window.off('resize');
+             search_mode = true;
         } else {
             $('.m_search').hide();
             search_mode = false;
