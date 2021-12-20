@@ -173,8 +173,8 @@
     //點點
     .slick-dots {
         bottom: 20px !important;
-        @include screen('mobile'){
-            bottom:5px !important;
+        @include screen('mobile') {
+            bottom: 5px !important;
         }
     }
     // .slick-dots li {
@@ -366,10 +366,39 @@
     }
     .img-container a .caption {
         text-align: left;
+        height: auto;
+        white-space: normal;
+        font-size: 1.375em;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1em 1em 0.5em;
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis; // ellipsis＝省略
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            line-height: 1.5em;
+        }
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis; // ellipsis＝省略
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-height: 1.5em; // X 填入行高 px 值
+            // height: 4;
+            font-size: 0.75em;
+            margin: 15px 0 0;
+            padding: 0;
+        }
     }
     @include screen('mobile') {
         .img-container a .caption {
-            height: 3em;
+            height: 2.5em;
+            padding: 0.5em 1em;
+            p{
+                display: none;
+            }
         }
     }
     //箭頭
@@ -415,7 +444,7 @@
 }
 //最新消息news
 .news {
-     text-align: center;
+    text-align: center;
     h2 {
         @extend .block02_h2;
     }
@@ -1722,7 +1751,7 @@
     }
 }
 // 文字說明
-.instructions{
-     line-height: 2em;
-        font-size: 1.125em;
+.instructions {
+    line-height: 2em;
+    font-size: 1.125em;
 }
