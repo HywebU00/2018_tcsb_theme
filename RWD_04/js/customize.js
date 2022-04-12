@@ -1295,3 +1295,10 @@ $(function() {
         $('.condition_block').slideToggle()
     })
 })
+$(function() {
+    if ($('.wrapper').hasClass('wrapper_e')) {
+        $('.sidebar').addClass('sidebar_e')
+    } else {
+
+    }
+})

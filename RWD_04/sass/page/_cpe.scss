@@ -1,0 +1,107 @@
+.wrapper_e {
+    // header
+    .header {
+        .navigation {
+            padding-right: 0;
+        }
+    }
+    .header>.container .searchCtrl {
+        display: none !important;
+    }
+    // main
+    .innerpage {
+        padding-top: 4em;
+        @include screen('mobile') {
+            padding-top: 6em;
+        }
+    }
+    .cp {
+        h1 {
+            line-height: 1.25em;
+            &.title {
+                color: $secondaryColor;
+                border-bottom: 1px solid $secondaryColor;
+                padding: 0px 0px 6px;
+                margin: 20px 0;
+                font-size: 2em;
+            }
+        }
+        h2 {
+            font-size: 1.25em;
+            color: #333;
+            clear: both;
+        }
+    }
+    // footer
+    footer {
+        background-image: none;
+        &:before {
+            background-image: none;
+        }
+        .fatfooter {
+            display: none;
+        }
+        .contentblock {
+            padding-top: 20px;
+            overflow: hidden;
+            @include screen('mobile') {
+                padding-top: 0;
+            }
+            .footer_logo {
+                background-color: transparent;
+                outline: none;
+                width: 400px;
+                height: auto;
+                margin: 0 10px 0px 0;
+                padding: 10px 0;
+                text-align: left;
+                font-size: 0.75em;
+                color: #fff;
+                line-height: 1.4em;
+                img {
+                    float: left;
+                    margin-right: 10px;
+                }
+                @include screen('mobile') {
+                    width: auto;
+                    padding: 0;
+                    padding-bottom: 10px;
+                }
+                @media(max-width: 400px) {
+                    img {
+                        float: none;
+                        display: block;
+                    }
+                }
+            }
+            .footer_connection {
+                height: auto;
+                width: auto;
+                outline: none;
+                padding: 10px;
+                word-break: normal;
+                @media(max-width: 1200px) {
+                    width:100%;
+                    padding-top: 10px;
+                    border-top: 1px solid rgba(255, 255, 255, .5);
+                }
+            }
+        }
+    }
+}
+.sidebar_e {
+    .navigation {
+        .left_nav {
+            border: none !important;
+            li {
+                float: none !important;
+                clear: both;
+                width: 100% !important;
+                a {
+                    border: none !important;
+                    border-bottom: 1px solid rgba(255, 255, 255, .5) !important;
+                }
+            }
+        }
+    }
+}
