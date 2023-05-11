@@ -396,7 +396,7 @@
         .img-container a .caption {
             height: 2.5em;
             padding: 0.5em 1em;
-            p{
+            p {
                 display: none;
             }
         }
@@ -468,7 +468,9 @@
                 @include screen('notebook') {
                     width: 75%;
                 }
-                @include screen('tablet') {}
+                @media (max-width: 500px) {
+                    width: 60%;
+                }
                 &:hover {
                     color: $aHover;
                 }
@@ -1754,4 +1756,21 @@
 .instructions {
     line-height: 2em;
     font-size: 1.125em;
+}
+// 主題圖片
+.themepicbg {
+    display: none;
+    @include screen('mobile') {
+        display: block;
+    }
+    .container {
+        padding: 0 !important;
+    }
+    .headerpic {
+        margin: 0;
+        padding: 0;
+        img {
+            width: 100%;
+        }
+    }
 }
