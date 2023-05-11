@@ -174,8 +174,8 @@ textblock /////////////////////////////////////////////////////////以下為demo
     //點點
     .slick-dots {
         bottom: 20px !important;
-        @include screen('mobile'){
-            bottom:5px !important;
+        @include screen('mobile') {
+            bottom: 5px !important;
         }
     }
     .slick-dots li {
@@ -486,9 +486,14 @@ textblock /////////////////////////////////////////////////////////以下為demo
                 @include text-overflow;
                 padding: 13px 0 2px 25px;
                 @include screen('notebook') {
+                    width: 70%;
+                }
+                @include screen('tablet') {
                     width: 65%;
                 }
-                @include screen('tablet') {}
+                @media (max-width: 500px) {
+                    width: 60%;
+                }
                 &:hover {
                     color: $aHover;
                 }
@@ -764,7 +769,7 @@ textblock /////////////////////////////////////////////////////////以下為demo
                 }
                 &:hover {
                     .title {
-                        background-color:darken($color-green, 10);
+                        background-color: darken($color-green, 10);
                     }
                 }
             }

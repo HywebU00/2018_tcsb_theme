@@ -327,7 +327,7 @@
             position: relative;
             border-bottom: 1px solid #dededb;
             a {
-                width: 80%;
+                width: 75%;
                 display: inline-block;
                 background-image: url('../images/icon_list01.png');
                 background-position: 8px 20px;
@@ -336,7 +336,13 @@
                 @include text-overflow;
                 padding: 13px 0 2px 25px;
                 @include screen('notebook') {
-                    width: 75%;
+                    width: 70%;
+                }
+                @include screen('tablet') {
+                    width: 65%;
+                }
+                @media (max-width: 500px) {
+                    width: 60%;
                 }
                 @include screen('tablet') {}
                 &:hover {
