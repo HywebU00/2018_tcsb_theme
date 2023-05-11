@@ -11,18 +11,27 @@
 }
 .tabs {
     position: relative;
-    @include screen('mobile') {
-        position: relative;
-    }
+   
     &>.tabItem {
+        border-radius: 0;
         position: relative;
         font-size: 1.25em;
         float: left;
-        margin: 0;
-        padding: 0;
         line-height: 1;
-        font-weight: normal;
-        &.active>a {
+        display: block;
+        padding: 18px 0 16px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        border: none;
+        background-color: #616770;
+        color: #fff;
+        &:hover, &:focus {
+            background: lighten($primaryColor, 40);
+            box-shadow: none;
+            color: $primaryColor;
+        }
+        &.active {
             background-color: $primaryColor;
             color: #FFF;
             background-image: none;
@@ -36,34 +45,6 @@
                 @include screen('mobile') {
                     left: 48%;
                 }
-            }
-            &:hover, &:focus {
-                background: $primaryColor;
-                color: #fff;
-                box-shadow: none;
-            }
-        }
-        @include screen('mobile') {
-            float: none;
-            &>a {
-                width: 100% !important;
-            }
-            &.active>a {}
-        }
-        &>a {
-            display: block;
-            padding: 18px 0 16px;
-            text-align: center;
-            // background-color: #aaa;
-            color: #fff;
-            text-decoration: none;
-            background-color: #616770;
-            @include text-overflow();
-            @include box-sizing();
-            &:hover, &:focus {
-                background: lighten($primaryColor, 40);
-                box-shadow: none;
-                color: $primaryColor;
             }
         }
     }
@@ -146,15 +127,14 @@
         }
     }
 }
-
 //
 .accordion_tab {
     &>.tabItem {
         &.active>a {
             background-color: $secondaryColor !important;
             color: #fff;
-            @include screen('mobile'){
-                 border-radius: 10px 10px 0 0; 
+            @include screen('mobile') {
+                border-radius: 10px 10px 0 0;
             }
             &:before {
                 content: '';
@@ -170,10 +150,10 @@
             background-color: #fff;
             color: $secondaryColor;
             text-decoration: none;
-            border-radius: 10px 10px 0 0; 
-            @include screen('mobile'){
-                 border: 2px solid $secondaryColor;
-                 border-radius:10px;
+            border-radius: 10px 10px 0 0;
+            @include screen('mobile') {
+                border: 2px solid $secondaryColor;
+                border-radius: 10px;
             }
             &:hover, &:focus {
                 background-color: $secondaryColor;
@@ -181,30 +161,28 @@
             }
         }
     }
-    .tabContent{
-        border-top:8px solid $secondaryColor;
+    .tabContent {
+        border-top: 8px solid $secondaryColor;
         background-color: lighten($secondaryColor, 50);
-        table{
-
-            th,td{
-                padding:15px 20px;
-                border:none;
+        table {
+            th, td {
+                padding: 15px 20px;
+                border: none;
                 border-bottom: 1px solid lighten($secondaryColor, 40);
             }
-            th{
+            th {
                 width: 45%;
                 text-align: right;
                 background-color: transparent;
-                color:darken($secondaryColor, 20);
-                @include screen('mobile'){
-                    white-space: normal!important;
+                color: darken($secondaryColor, 20);
+                @include screen('mobile') {
+                    white-space: normal !important;
                 }
             }
-            tr:last-child{
-                th,td{
-                   border-bottom: none; 
+            tr:last-child {
+                th, td {
+                    border-bottom: none;
                 }
-                
             }
         }
     }

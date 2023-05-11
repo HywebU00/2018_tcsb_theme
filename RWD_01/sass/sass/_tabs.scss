@@ -11,9 +11,7 @@
 }
 .tabs {
     position: relative;
-    @include screen('mobile') {
-        position: relative;
-    }
+   
     &>.tabItem {
         border-radius: 5px;
         position: relative;

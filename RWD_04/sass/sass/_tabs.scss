@@ -11,19 +11,25 @@
 }
 .tabs {
     position: relative;
-    @include screen('mobile') {
-        position: relative;
-    }
     &>.tabItem {
         border-radius: 5px;
         position: relative;
         font-size: 1.25em;
         float: left;
-        margin: 0;
-        padding: 0;
         line-height: 1;
         font-weight: normal;
-        &.active>a {
+        display: block;
+        padding: 18px 0 16px;
+        text-align: center;
+        border: none;
+        color: darken($primaryColor, 30);
+        text-decoration: none;
+        background: lighten($primaryColor, 30);
+        &:hover, &:focus {
+            background-color: $primaryColor;
+            color: #FFF;
+        }
+        &.active {
             background-color: $primaryColor;
             color: #FFF;
             background-image: none;
@@ -37,45 +43,6 @@
                 @include screen('mobile') {
                     left: 48%;
                 }
-            }
-            &:hover, &:focus {
-                background: $primaryColor;
-                color: #fff;
-                box-shadow: none;
-            }
-        }
-        @include screen('mobile') {
-            float: none;
-            &>a {
-                width: 100% !important;
-            }
-            &.active>a {}
-        }
-        &>a {
-            display: block;
-            padding: 18px 0 16px;
-            text-align: center;
-            // background-color: #aaa;
-            color: darken($primaryColor, 30);
-            text-decoration: none;
-            background: lighten($primaryColor, 30);
-            @include text-overflow();
-            @include box-sizing();
-            &:hover, &:focus {
-                background-color: $primaryColor;
-                color: #FFF;
-            }
-        }
-        &:first-child>a {
-            border-radius: 5px 0 0 5px;
-            @include screen('mobile') {
-                border-radius: 0;
-            }
-        }
-        &:last-of-type>a {
-            border-radius: 0 5px 5px 0;
-            @include screen('mobile') {
-                border-radius: 0;
             }
         }
     }

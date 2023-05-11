@@ -1,103 +1,64 @@
 .tabSet {
     max-width: 100%;
-    margin:0 auto ;
+    margin: 0 auto;
     overflow: hidden;
     @include clearfix;
-
     @include screen('mobile') {
         max-width: 100%;
         width: auto;
         height: auto !important;
     }
 }
-
 .tabs {
     position: relative;
-
-    @include screen('mobile') {
-        position: relative;
-    }
-
     &>.tabItem {
         position: relative;
         font-size: 1.25em;
         float: left;
-        margin: 0;
-        padding: 0;
+        padding: 18px 0 16px;
+        text-align: center;
         line-height: 1;
         font-weight: normal;
-        &.active>a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        background-color: $color-gray;
+        border: none;
+        &:hover, &:focus {
+            background: $primaryColor;
+            color: #fff;
+        }
+        &.active {
             background-color: $primaryColor;
             color: #FFF;
             background-image: none;
-            &:before{
+            &:before {
                 content: '';
-                border:15px solid $primaryColor;
+                border: 15px solid $primaryColor;
                 border-color: $primaryColor transparent transparent transparent;
                 position: absolute;
-                bottom:-30px;
-                left:46%;
+                bottom: -30px;
+                left: 46%;
                 @include screen('mobile') {
-                    left:48%;
+                    left: 48%;
                 }
             }
-            &:hover, &:focus {
-                background:$primaryColor;
-                color:#fff;
-                box-shadow: none;
-            }
         }
-
-
-        @include screen('mobile') {
-            float: none;
-
-            &>a {
-                width: 100% !important;
-            }
-
-            &.active>a {
-               
-            }
-        }
-
-        &>a {
-            display: block;
-            padding: 18px 0 16px;
-            text-align: center;
-            color: #fff;
-            text-decoration: none;
-            background-color:$color-gray;
-            @include text-overflow();
-            @include box-sizing();
-
-            &:hover, &:focus {
-                background:$primaryColor;
-                box-shadow: none;
-               color: #fff;
-            }
-        }
-
-        
     }
 }
-
 //多組 可設定差異
 .example-2 {
     .tabItem>a:hover {
         background: $secondaryColor;
     }
-
     .tabItem.active>a {
         background: $secondaryColor;
     }
 }
-
 // 顯示content
 .active+.tabContent {
     display: block;
 }
-
 .tabContent {
     position: absolute;
     top: auto;
@@ -106,43 +67,37 @@
     clear: both;
     padding: 30px 0px;
     display: none;
-
     @include screen('mobile') {
         position: static;
     }
-
     figure {
         float: left;
         margin: 0 25px 15px 0;
-        img{
+        img {
             width: 300px;
         }
         @media(max-width: 700px) {
-            float:none;
-            margin:0 0 15px 0;
-            img{
+            float: none;
+            margin: 0 0 15px 0;
+            img {
                 width: 100%;
             }
         }
     }
-
     h3 {
         margin: 0 0 20px;
-         @include text-overflow;
+        @include text-overflow;
         a {
             span {
                 color: $primaryColor;
                 margin: 0 1em 0 0;
             }
-
             color: $color-word;
-
-            &:hover, &:focus{
-                 color: $primaryColor;
+            &:hover, &:focus {
+                color: $primaryColor;
             }
         }
     }
-
     ul {
         list-style-type: none;
         margin: 0 0 15px;
@@ -151,20 +106,15 @@
         clear: both;
         float: none;
     }
-
     li {
         margin: 0;
         padding: 0;
         border-bottom: 1px #dcdcdc solid;
-        
-        
-
         a {
             @include aSetting_nocolor;
             display: block;
             padding: 10px 0;
             @include text-overflow();
-
             span {
                 display: inline-block;
                 margin: 0 1em 0 0;
@@ -172,8 +122,5 @@
                 color: $primaryColor;
             }
         }
-
     }
-
-    
 }

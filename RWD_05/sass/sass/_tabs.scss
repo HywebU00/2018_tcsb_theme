@@ -11,18 +11,27 @@
 }
 .tabs {
     position: relative;
-    @include screen('mobile') {
-        position: relative;
-    }
+   
     &>.tabItem {
+        border-radius: 0;
         position: relative;
         font-size: 1.25em;
         float: left;
-        margin: 0;
-        padding: 0;
         line-height: 1;
-        font-weight: normal;
-        &.active>a {
+        display: block;
+        padding: 18px 0 16px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        border: none;
+        background-color: #616770;
+        color: #fff;
+        &:hover, &:focus {
+            background: lighten($primaryColor, 40);
+            box-shadow: none;
+            color: $primaryColor;
+        }
+        &.active {
             background-color: $primaryColor;
             color: #FFF;
             background-image: none;
@@ -36,34 +45,6 @@
                 @include screen('mobile') {
                     left: 48%;
                 }
-            }
-            &:hover, &:focus {
-                background: $primaryColor;
-                color: #fff;
-                box-shadow: none;
-            }
-        }
-        @include screen('mobile') {
-            float: none;
-            &>a {
-                width: 100% !important;
-            }
-            &.active>a {}
-        }
-        &>a {
-            display: block;
-            padding: 18px 0 16px;
-            text-align: center;
-            // background-color: #aaa;
-            color: #fff;
-            text-decoration: none;
-            background-color: #616770;
-            @include text-overflow();
-            @include box-sizing();
-            &:hover, &:focus {
-                background: lighten($primaryColor, 40);
-                box-shadow: none;
-                color: $primaryColor;
             }
         }
     }
