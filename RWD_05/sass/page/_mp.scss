@@ -1884,10 +1884,9 @@
     //點點
     .slick-dots {
         bottom: 20px !important;
-         @include screen('mobile'){
-            bottom:0px !important;
+        @include screen('mobile') {
+            bottom: 0px !important;
         }
-
     }
     .slick-dots li button:before {
         background-color: #fff;
@@ -2056,28 +2055,25 @@
         @include screen('tablet') {
             padding: 0 0 30px 30px !important;
         }
-        @include screen('mobile'){
-            padding:0 30px!important;
+        @include screen('mobile') {
+            padding: 0 30px !important;
         }
     }
 }
 .activity_signup {
     position: relative;
     display: flex;
-   
     @include screen('mobile') {
         display: block;
     }
     .title_blcok {
-        flex:0 0 auto;
+        flex: 0 0 auto;
         flex-basis: 382px;
         max-width: 382px;
         height: 476px;
         background-image: url('../images/activity_signup_titlebg.png');
         background-position: left top;
         background-repeat: no-repeat;
-      
-       
         @include screen('mobile') {
             background-image: url('../images/h2bg02.png');
             background-position: left top;
@@ -2119,7 +2115,7 @@
         position: relative;
         @include screen('mobile') {
             width: 100%;
-            max-width:100%;
+            max-width: 100%;
         }
         .mp_list {
             margin: 90px 0 20px 10px;
@@ -2140,23 +2136,27 @@
                     border: none;
                     border-bottom: 1px solid #eee;
                     padding: 15px 10px;
-                    &.date{
-                        white-space: normal!important;
-                        text-align: left!important;
+                    width: 33%;
+                    vertical-align: top;
+                    @include screen('xs_mobile'){
+                        width: auto;
+                    }
+                    &.date {
+                        white-space: normal !important;
+                        text-align: left !important;
                     }
                 }
                 a {
                     color: #333;
                     width: 95%;
                     display: block;
-                    @include text-overflow;
-                    @include screen('tablet') {
-                        white-space: normal;
-                    }
+                    // @include text-overflow;
+                    // @include screen('tablet') {
+                    //     white-space: normal;
+                    // }
                     &:hover {
                         color: $linkColor;
                     }
-                    
                 }
             }
         }
@@ -2168,7 +2168,6 @@
 }
 // 災害現場
 .disaster_scene_block {
-
     .container {
         background-color: #fff;
         padding: 0 30px !important;
@@ -2179,7 +2178,7 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-     @include screen('mobile'){
+    @include screen('mobile') {
         padding-top: 50px;
     }
     .title_blcok {
@@ -2711,7 +2710,7 @@
                 }
                 .movieblock {
                     flex: 1 1 33.33%;
-                    flex-basis:33.33%; 
+                    flex-basis: 33.33%;
                     height: 178px;
                     position: relative;
                     overflow: hidden;
@@ -2874,7 +2873,6 @@
                 width: 360px;
                 height: 477px;
                 margin: 20px auto;
-               
                 @media(max-width: 400px) {
                     img {
                         width: 80%;
@@ -2885,14 +2883,12 @@
                 position: absolute;
                 bottom: 50px;
                 right: 100px;
-                
                 @media(max-width: 600px) {
-                     right: 30px;
+                    right: 30px;
                 }
-                 @media(max-width: 400px){
-                       right: 0;
-                      
-                 }
+                @media(max-width: 400px) {
+                    right: 0;
+                }
                 ul {
                     margin: 0;
                     padding: 0;
