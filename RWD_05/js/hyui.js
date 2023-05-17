@@ -153,6 +153,17 @@ $(function() {
             _body.off('touchmove');
             $('.m_search').hide();
             $('.language').find('ul').hide();
+            //熱門關鍵字限字數
+            $(function() {
+                var activity_len = 100; // 超過100個字以"..."取代
+                $(".activity_signup .mp_list").find('td').each(function(i) {
+                    if ($(this).text().length > activity_len) {
+                        $(this).attr("title", $(this).text());
+                        var text = $(this).text().substring(0, activity_len - 1) + "...";
+                        $(this).text(text);
+                    }
+                });
+            })
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
@@ -182,10 +193,17 @@ $(function() {
                     $('.menu').find('li ul').hide();
                 }
             });
-            //search
-            // $('.searchbtn').click(function(){
-            //     _search.stop().slideToggle();
-            // })
+            //熱門關鍵字限字數
+            $(function() {
+                var activity_len = 16; // 超過100個字以"..."取代
+                $(".activity_signup .mp_list").find('td').each(function(i) {
+                    if ($(this).text().length > activity_len) {
+                        $(this).attr("title", $(this).text());
+                        var text = $(this).text().substring(0, activity_len - 1) + "...";
+                        $(this).text(text);
+                    }
+                });
+            })
         }
     }
     //設定resize 計時器
@@ -204,9 +222,8 @@ $(function() {
     _searchCtrl.off().on('click', function(e) {
         if (!search_mode) {
             $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');
-           
             _window.off('resize');
-             search_mode = true;
+            search_mode = true;
         } else {
             $('.m_search').hide();
             search_mode = false;
@@ -503,7 +520,7 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
         e.preventDefault();
     });
-     $('.scrollToTop').keydown(function(e) {
+    $('.scrollToTop').keydown(function(e) {
         _body.find('a.goCenter').focus();
         e.preventDefault();
     });
@@ -557,5 +574,4 @@ $(function() {
             $('#aC').focus();
         }
     });
-    
 });

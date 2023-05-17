@@ -2052,31 +2052,32 @@
         background-position: center top;
         min-height: 526px;
         overflow: hidden;
-        padding: 0 30px !important;
+        padding: 0 0 0 30px !important;
         @include screen('tablet') {
-            padding: 0 30px 30px !important;
+            padding: 0 0 30px 30px !important;
+        }
+        @include screen('mobile'){
+            padding:0 30px!important;
         }
     }
 }
 .activity_signup {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+   
     @include screen('mobile') {
         display: block;
     }
     .title_blcok {
-        flex: none;
-        flex-basis: 482px;
-        width: 482px;
+        flex:0 0 auto;
+        flex-basis: 382px;
+        max-width: 382px;
         height: 476px;
         background-image: url('../images/activity_signup_titlebg.png');
-        background-position: right top;
+        background-position: left top;
         background-repeat: no-repeat;
-        margin-right: -100px;
-        @include screen('notebook') {
-            margin-right: -180px;
-        }
+      
+       
         @include screen('mobile') {
             background-image: url('../images/h2bg02.png');
             background-position: left top;
@@ -2102,7 +2103,7 @@
             width: 65px;
             height: 147px;
             position: absolute;
-            right: 30%;
+            right: 10%;
             top: 5%;
             @include screen('mobile') {
                 right: 0;
@@ -2112,12 +2113,13 @@
     }
     .content {
         flex: 1 1 auto;
-        flex-basis: calc(100% - 482px);
-        width: calc(100% - 482px);
+        flex-basis: calc(100% - 382px);
+        max-width: calc(100% - 382px);
         order: -1;
         position: relative;
         @include screen('mobile') {
             width: 100%;
+            max-width:100%;
         }
         .mp_list {
             margin: 90px 0 20px 10px;
@@ -2137,7 +2139,11 @@
                 td {
                     border: none;
                     border-bottom: 1px solid #eee;
-                    padding: 15px 0;
+                    padding: 15px 10px;
+                    &.date{
+                        white-space: normal!important;
+                        text-align: left!important;
+                    }
                 }
                 a {
                     color: #333;
@@ -2150,6 +2156,7 @@
                     &:hover {
                         color: $linkColor;
                     }
+                    
                 }
             }
         }
@@ -2161,6 +2168,7 @@
 }
 // 災害現場
 .disaster_scene_block {
+
     .container {
         background-color: #fff;
         padding: 0 30px !important;
@@ -2171,6 +2179,9 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
+     @include screen('mobile'){
+        padding-top: 50px;
+    }
     .title_blcok {
         flex: none;
         flex-basis: 475px;
@@ -2583,6 +2594,7 @@
     .audiovisual {
         position: relative;
         padding-top: 150px;
+        padding-bottom: 80px;
         .title_blcok {
             background-image: url('../images/audiovisual_h2bg.png');
             background-repeat: no-repeat;
@@ -2630,7 +2642,7 @@
         }
         .content {
             width: 80%;
-            height: 550px;
+            // height: 550px;
             margin: 0 auto;
             position: relative;
             @include screen('tablet') {
@@ -2652,6 +2664,7 @@
                 }
                 .img-container {
                     flex: 0 0 50%;
+                    flex-basis: 50%;
                     height: 178px;
                     position: relative;
                     text-align: right;
@@ -2698,6 +2711,7 @@
                 }
                 .movieblock {
                     flex: 1 1 33.33%;
+                    flex-basis:33.33%; 
                     height: 178px;
                     position: relative;
                     overflow: hidden;
@@ -2775,6 +2789,7 @@
 }
 // 責任區域
 .responsibility_area_block {
+    clear: both;
     .container {
         overflow: hidden;
         background-image: url('../images/responsibility_area_rightbg.jpg');
