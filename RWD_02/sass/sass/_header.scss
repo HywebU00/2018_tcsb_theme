@@ -295,6 +295,14 @@
             padding: .4em 1em .4em !important;
             font-size: .813em;
         }
+        a {
+            @extend %btn;
+            @include btn_setting($form-focus, #FFF);
+            min-width: 4em;
+            font-size: 0.875em;
+             padding: .3em 1em .3em !important;
+             margin: 0;
+        }
     }
 
     .keywordHot {
@@ -401,7 +409,7 @@
             padding: .2em;
             margin-bottom: 0;
             width: 15%;
-            margin-top: 20px;
+            margin-top: 17px;
             padding-left: 0%;
             @include box-sizing();
 
@@ -414,6 +422,12 @@
                 padding: .6em 1em .7em !important;
                 margin: 0;
 
+            }
+            a{
+                width: 100% !important;
+                padding: .6em 1em .6em !important;
+                margin: 0;
+                font-size: 0.875em;
             }
         }
 

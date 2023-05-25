@@ -52,7 +52,7 @@
             @extend %mobileCtrlBtn;
             span {
                 position: absolute;
-                background:#fff;
+                background: #fff;
                 width: 50%;
                 height: 4px;
                 top: 35%;
@@ -78,7 +78,7 @@
                 height: 40px;
                 background: url('../images/search_icon2.svg') no-repeat center center;
                 background-size: 32px;
-                opacity:1;
+                opacity: 1;
                 content: "";
                 position: absolute;
                 top: 10px;
@@ -131,7 +131,7 @@
         margin: 25px 10px 0 0;
         padding-right: 60px;
         display: block;
-        @include screen('mobile'){
+        @include screen('mobile') {
             display: none;
         }
         ul {
@@ -281,6 +281,14 @@
             padding: .4em 1em .4em !important;
             font-size: .813em;
         }
+        a {
+            @extend %btn;
+            @include btn_setting($lightColor, #000);
+            min-width: 4em;
+            font-size: 0.875em;
+            padding: .3em 1em .3em !important;
+            margin: 0;
+        }
     }
     .keywordHot {
         display: block;
@@ -377,7 +385,7 @@
             padding: .2em;
             margin-bottom: 0;
             width: 15%;
-            margin-top: 20px;
+            margin-top: 17px;
             padding-left: 0%;
             @include box-sizing();
             @include screen('xs_mobile') {
@@ -387,6 +395,12 @@
                 width: 100% !important;
                 padding: .6em 1em .7em !important;
                 margin: 0;
+            }
+            a {
+                width: 100% !important;
+                padding: .6em 1em .6em !important;
+                margin: 0;
+                font-size: 0.875em;
             }
         }
         .keywordHot {
@@ -410,7 +424,7 @@
     right: 0;
     top: 0;
     box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
-    background: darken($primaryColor, 5)!important;
+    background: darken($primaryColor, 5) !important;
     z-index: 999;
     @include screen('mobile') {
         background: #FFF;
