@@ -753,7 +753,7 @@ $(function() {
     $('.accordion_list .list_content .tabSet').hide();
     // arrow_btn
     $('.accordion_list .list_block .arrow_btn>a').click(function() {
-        if ($('.accordion_list .show').length == 0) {
+        if ($('.list_content :visible').length == 0) {
             $('.list_content').css('min-height', '300px');
             $('.list_content').stop(true, false).slideDown();
             $('.accordion_list .list_content .listTb3').fadeIn();
