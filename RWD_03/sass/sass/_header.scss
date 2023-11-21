@@ -130,7 +130,7 @@
         margin: 25px 10px 0 0;
         padding-right: 60px;
         display: block;
-        @include screen('mobile'){
+        @include screen('mobile') {
             display: none;
         }
         ul {
@@ -194,7 +194,7 @@
     height: 90px;
     // float: right;
     vertical-align: middle;
-    padding: 1em .3em 0em;
+    padding: 1em 1em 0em;
     background-color: $color-word;
     position: absolute;
     top: 75px;
@@ -218,67 +218,65 @@
             float: left;
         }
     }
-    .form_grp {
-        margin-bottom: 0;
-        margin-right: 0 !important;
-        input {
-            margin: -0.2em 0 0;
-            padding: .2em 35px .2em .5em;
-            box-shadow: none;
-            @media(min-width: 767px) {
-                &[type="text"] {
-                    float: left;
+    .form_inline {
+        display: flex;
+        .form_grp {
+            flex: 1 1 auto;
+            flex-basis: calc(100% - 100px);
+            display: flex;
+            input {
+                margin: 0;
+                padding: .2em 35px .2em .5em;
+                box-shadow: none;
+                &[type="submit"] {
+                    font-size: 0em;
+                    width: 30px !important;
                     height: 30px;
-                }
-            }
-            &[type="submit"] {
-                font-size: 0em;
-                width: 30px !important;
-                height: 30px;
-                // max-width:none;
-                // min-width:none;
-                background: url(../images/basic/icon_search.png) no-repeat center center;
-                background-size: 20px;
-                border: none;
-                display: inline-block;
-                margin-left: -40px !important;
-                margin-top: -2px !important;
-                opacity: .8;
-                &:hover,
-                &:focus {
-                    opacity: 1;
-                    box-shadow: none !important;
+                    background: url(../images/basic/icon_search.png) no-repeat center center;
+                    background-size: 20px;
+                    border: none;
+                    display: inline-block;
+                    margin-left: -35px !important;
+                    opacity: .8;
+                    &:hover,
+                    &:focus {
+                        opacity: 1;
+                        box-shadow: none !important;
+                    }
                 }
             }
         }
-    }
-    .btn_grp {
-        padding: .2em;
-        margin-bottom: 0;
-        input,
-        input[type="submit"] {
-            margin: 0;
-            padding: .4em 1em .4em !important;
-            font-size: .813em;
-        }
-        a {
-            @extend %btn;
-            @include btn_setting($form-focus, #FFF);
-            min-width: 4em;
-            font-size: 0.875em;
-             padding: .3em 1em .3em !important;
-             margin: 0;
+        .btn_grp {
+            flex: 0 0 auto;
+            flex-basis: 100px;
+            padding: 0;
+            margin-bottom: 0;
+            input,
+            input[type="submit"] {
+                margin: 0;
+                padding: .4em 1em .4em !important;
+                font-size: .813em;
+            }
+            a {
+                @extend %btn;
+                @include btn_setting($form-focus, #FFF);
+                min-width: 4em;
+                font-size: 0.875em;
+                padding: .3em 1em .3em !important;
+                margin: 0;
+                display: block;
+            }
         }
     }
     .keywordHot {
         display: block;
         vertical-align: middle;
-        margin-left: 1.5em;
+        margin-left: 0em;
         padding: .1em 0 .3em;
         text-align: left;
         ul {
             display: inline-block;
-            font-size: .813em;
+            font-size: 0.875em;
             line-height: 1.65em;
             margin: 0;
             padding: 0;
@@ -289,13 +287,29 @@
                 float: left;
             }
             li {
-                margin: 0 .6em 0 0;
+                margin: 0 1em 0 0;
                 padding: 0;
                 display: inline-block;
+                position: relative;
+                &:before {
+                    content: '、';
+                    color: #fff;
+                    position: absolute;
+                    left: -1em;
+                    top: 0px;
+                }
+                &:first-child {
+                    &:before {
+                        display: none;
+                    }
+                }
             }
             a {
                 @include aSetting_nocolor;
                 color: #fff;
+                &:hover {
+                    color: $linkColor;
+                }
             }
         }
     }
@@ -304,7 +318,7 @@
         width: 100% !important;
         max-width: 100% !important;
         min-width: auto;
-        padding: .2em .3em .5em;
+        padding: 1em;
         display: block;
         height: auto;
         position: fixed;
@@ -316,72 +330,58 @@
             font-size: 0em;
             line-height: 0;
         }
-        .form_grp {
-            width: 80%;
-            height: auto;
-            padding: 0 0 0 5% !important;
-            margin-top: 0;
-            text-align: right;
-            float: left;
-            height: 50px;
-            position: relative;
-            @include box-sizing();
-            @include screen('xs_mobile') {
-                width: 70%;
-            }
-            input {
-                width: 100%;
-                margin: -0.2em 0 0;
-                padding: .5em 45px .4em .5em;
-                &[type="submit"] {
-                    font-size: 0em;
-                    width: 36px !important;
-                    height: 36px;
-                    padding: 0;
-                    // max-width:none;
-                    // min-width:none;
-                    background: url(../images/basic/icon_search.png) no-repeat center center;
-                    background-size: 24px;
-                    border: none;
-                    display: inline-block;
-                    // margin-left: -50px !important;
-                    position: absolute;
-                    right: 5px;
-                    top: 22px;
-                    opacity: .8;
-                    // outline:1px solid red;
-                    &:hover,
-                    &:focus {
-                        opacity: 1;
+        .form_inline {
+            display: flex;
+            .form_grp {
+                flex: 1 1 auto;
+                display: flex;
+                input {
+                    margin: 0;
+                    padding: .2em 35px .2em .5em;
+                    box-shadow: none;
+                    width: 100%;
+                    &[type="submit"] {
+                        font-size: 0em;
+                        width: 30px !important;
+                        height: 30px;
+                        background: url(../images/basic/icon_search.png) no-repeat center center;
+                        background-size: 20px;
+                        border: none;
+                        display: inline-block;
+                        margin-left: -35px !important;
+                        opacity: .8;
+                        &:hover,
+                        &:focus {
+                            opacity: 1;
+                            box-shadow: none !important;
+                        }
                     }
                 }
             }
-        }
-        .btn_grp {
-            display: inline-block;
-            padding: .2em;
-            margin-bottom: 0;
-            width: 15%;
-            margin-top: 17px;
-            padding-left: 0%;
-            @include box-sizing();
-            @include screen('xs_mobile') {
-                width: 25%;
-            }
-            input {
-                width: 100% !important;
-                padding: .6em 1em .7em !important;
-                margin: 0;
-            }
-            a{
-                width: 100% !important;
-                padding: .6em 1em .6em !important;
-                margin: 0;
-                font-size: 0.875em;
+            .btn_grp {
+                flex: 1 1 auto;
+                // flex-basis: 100px;
+                padding: 0;
+                margin-bottom: 0;
+                input,
+                input[type="submit"] {
+                    margin: 0;
+                    padding: .4em 1em .4em !important;
+                    font-size: .813em;
+                }
+                a {
+                    @extend %btn;
+                    @include btn_setting($form-focus, #FFF);
+                    min-width: 4em;
+                    font-size: 0.875em;
+                    padding: .3em 1em .3em !important;
+                    margin: 0;
+                    display: block;
+                }
             }
         }
         .keywordHot {
-            padding-left: 2%;
+            padding: 0;
             margin-top: 10px;
             @include clearfix;
             a {
@@ -428,11 +428,10 @@
         }
     }
 }
-
-.headerpic{
-    margin:0;
-    padding:0;
-    img{
+.headerpic {
+    margin: 0;
+    padding: 0;
+    img {
         width: 100%;
     }
 }

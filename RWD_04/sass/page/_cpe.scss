@@ -22,7 +22,7 @@
                 color: $secondaryColor;
                 border-bottom: 1px solid $secondaryColor;
                 padding: 0px 0px 6px;
-                margin: 20px 0;
+                margin: 0px 0 20px;
                 font-size: 2em;
             }
         }
@@ -81,11 +81,14 @@
                 padding: 10px;
                 word-break: normal;
                 @media(max-width: 1200px) {
-                    width:100%;
+                    width: 100%;
                     padding-top: 10px;
                     border-top: 1px solid rgba(255, 255, 255, .5);
                 }
             }
+        }
+        .footer_info {
+            text-align: left;
         }
     }
 }
@@ -103,5 +106,76 @@
                 }
             }
         }
+    }
+}
+.wrapper_e2 {
+    .header {
+        box-shadow: none;
+         .navigation{
+            ul{
+                 &.left_nav{
+                    li{
+                        a{
+                            background-image:none;
+                            position:relative;
+                            &:before{
+                                content: '';
+                                width:12px;
+                                height: 12px;
+                                border-radius:8px 15px 6px 12px;
+                                background-color:#91d0ba;
+                                position:absolute;
+                                left:0;
+                                top:6px;
+
+                            }
+                        }
+                    }
+                 }
+            }
+         }
+    }
+    .cp {
+        padding: 40px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        position: relative;
+        z-index: 9;
+    }
+    .innerpage {
+        position: relative;
+        background-color: #caefdb;
+         background-image: url('../images/innerpage_bg03.svg');
+        background-repeat: no-repeat;
+        background-position:center bottom;
+        background-size:130%;
+        &:before {
+            content: '';
+            background-image: url('../images/innerpage_bg02.svg');
+            background-repeat: no-repeat;
+            background-position: left top;
+            position: absolute;
+            width: 700px;
+            height: 555px;
+            top: -100px;
+            left: -150px;
+            background-color: transparent;
+        }
+        &:after {
+            content: '';
+            background-image: url('../images/innerpage_bg01.svg');
+            background-repeat: no-repeat;
+            background-position: right top;
+            position: absolute;
+            width: 500px;
+            height: 432px;
+            top: -100px;
+            right: -150px;
+            z-index: 0;
+            background-color: transparent;
+        }
+        .container {}
     }
 }
