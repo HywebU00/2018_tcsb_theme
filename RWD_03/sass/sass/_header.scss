@@ -222,12 +222,12 @@
     display: flex;
     .form_grp {
       flex: 1 1 auto;
-      //   flex-basis: calc(100% - 90px);
       display: flex;
       input {
         margin: 0;
         padding: 0.2em 35px 0.2em 0.5em;
         box-shadow: none;
+        width: 100%;
         &[type='submit'] {
           font-size: 0em;
           width: 30px !important;

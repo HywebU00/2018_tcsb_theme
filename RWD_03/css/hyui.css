@@ -3334,6 +3334,7 @@ img.img-responsive {
   margin: 0;
   padding: 0.2em 35px 0.2em 0.5em;
   box-shadow: none;
+  width: 100%;
 }
 .search .form_inline .form_grp input[type=submit] {
   font-size: 0em;
