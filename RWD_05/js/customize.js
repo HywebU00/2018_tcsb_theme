@@ -978,3 +978,10 @@ $(function () {
       $('.header .search').hide();
     });
 });
+$(document).ready(function () {
+  $('[data-fancybox]').fancybox({
+    afterLoad: function (instance, current) {
+      current.$image.attr('alt', current.opts.$orig.find('img').attr('alt'));
+    },
+  });
+});
