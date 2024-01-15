@@ -3611,6 +3611,11 @@ img.img-responsive {
   z-index: 99;
   clear: both;
 }
+@media screen and (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+}
 .menu > ul {
   text-align: center;
   margin: 0;
@@ -3728,7 +3733,7 @@ img.img-responsive {
   top: 1.3em;
   width: 6px;
   height: 6px;
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
   transform: rotate(45deg);
   border-bottom: none;
   border-left: none;
@@ -3785,7 +3790,7 @@ img.img-responsive {
   position: absolute;
   top: 0;
   left: 0;
-  color: #FFF;
+  color: #fff;
   width: 100%;
   height: 3em;
   background: #0057ab;
@@ -3797,7 +3802,12 @@ img.img-responsive {
   width: 100%;
   box-shadow: 0px 0px 4px RGBA(0, 0, 0, 0.4);
   margin-bottom: 1em;
-  background: #CCC;
+  background: #ccc;
+}
+@media screen and (max-width: 767px) {
+  .sidebar .m_area .menu {
+    display: block;
+  }
 }
 .sidebar .m_area .menu a {
   display: block;
@@ -3811,18 +3821,18 @@ img.img-responsive {
   width: 100%;
 }
 .sidebar .m_area .menu li ul {
-  background: #FFF;
+  background: #fff;
 }
 .sidebar .m_area .menu li > a {
   padding: 0.5em 1em;
-  background: #FFF;
-  border-bottom: 1px solid #CCC;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
   text-align: left;
 }
 .sidebar .m_area .menu li.hasChild > a {
   padding: 0.5em 1em;
   color: #222;
-  background: #FFF;
+  background: #fff;
   padding-right: 36px;
   position: relative;
 }
@@ -3841,7 +3851,7 @@ img.img-responsive {
   transition: 0.3s;
 }
 .sidebar .m_area .menu li li {
-  background: #FFF;
+  background: #fff;
 }
 .sidebar .m_area .menu li li a {
   padding: 1em 1em 1em 2em !important;
@@ -3861,7 +3871,7 @@ img.img-responsive {
 .sidebar .m_area .menu li li li a {
   background: rgba(0, 0, 0, 0.15) !important;
   padding: 0.8em 1em 0.8em 4em !important;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
 }
 .sidebar .m_area .menu li li li a:hover, .sidebar .m_area .menu li li li a:focus {
   background: rgba(0, 0, 0, 0.25) !important;
@@ -3922,7 +3932,7 @@ img.img-responsive {
   line-height: 2em;
   padding: 0.5em 1em;
   font-size: 0.938em;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.5);
