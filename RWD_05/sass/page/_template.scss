@@ -1,391 +1,391 @@
 body {
-    &.noscroll {
-        position: static !important;
-        width: 100%;
-        height: 100%;
-        overflow: hidden !important;
-        overflow-y: hidden !important;
-        margin: 0;
-        padding: 0;
-    }
-    @include gradient(#5ab5cb, #55b3a7, vertical);
+  &.noscroll {
+    position: static !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+  @include gradient(#5ab5cb, #55b3a7, vertical);
 }
 // 最外圍預設為100%
 .wrapper {
-    width: 100%;
-    margin: 0px auto;
-    @include screen('mobile') {
-        background: #FFF;
-    }
+  width: 100%;
+  margin: 0px auto;
+  @include screen('mobile') {
+    background: #fff;
+  }
 }
 .mpwrapper {
-    .header {
-        position: absolute;
-        z-index: 999;
-        text-align: center;
-        width: 100%;
-        box-shadow: none;
-        background-image: none;
-        background-color: transparent;
-        @include screen('mobile') {
-            position: fixed;
-            background-color: black;
-            box-shadow: 0px 2px 5px RGBA(0, 0, 0, 0.3);
-        }
+  .header {
+    position: absolute;
+    z-index: 999;
+    text-align: center;
+    width: 100%;
+    box-shadow: none;
+    background-image: none;
+    background-color: transparent;
+    @include screen('mobile') {
+      position: fixed;
+      background-color: black;
+      box-shadow: 0px 2px 5px RGBA(0, 0, 0, 0.3);
     }
-    footer{
-       background-color: transparent;
-    }
+  }
+  footer {
+    background-color: transparent;
+  }
 }
 .themewrapper {
-    .header {
-        position: relative;
-    }
+  .header {
+    position: relative;
+  }
 }
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
-    // outline: 1px solid red;
-    padding: 0;
-    margin: 0 auto;
-    max-width: $container-max; //請看_variable.scss
-    position: relative;
-    overflow: hidden;
+  // outline: 1px solid red;
+  padding: 0;
+  margin: 0 auto;
+  max-width: $container-max; //請看_variable.scss
+  position: relative;
+  overflow: hidden;
 
-    @media (min-width: 992px) and (max-width:1200px) {
-        width: 980px;
-    }
-    @include screen('mobile'){
-        overflow:visible;
-    }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    width: 980px;
+  }
+  @include screen('mobile') {
+    overflow: visible;
+  }
 }
 .main {
-    margin: 0 auto;
-    padding: 0; // max-width: $container-max;
-    // 可先設定一個中央區塊最大寬，限制accesskey對齊
-    // background-color:#fff;
-    overflow: hidden;
-    position: relative;
-    @include screen('mobile') {
-        padding-top: 55px;
+  margin: 0 auto;
+  padding: 0; // max-width: $container-max;
+  // 可先設定一個中央區塊最大寬，限制accesskey對齊
+  // background-color:#fff;
+  overflow: hidden;
+  position: relative;
+  @include screen('mobile') {
+    padding-top: 55px;
+  }
+  .accesskey {
+    color: #fafafa;
+  }
+  .container {
+    background-color: #fff;
+  }
+  // 內頁標題設定
+  h1 {
+    line-height: 1.25em;
+    &.title {
+      color: $secondaryColor;
+      border-bottom: 1px solid $secondaryColor;
+      padding: 0px 0px 6px;
+      margin: 20px 0;
+      font-size: 1.625em;
     }
-    .accesskey {
-        color: #fafafa;
-    }
+  }
+  > section {
+    padding: 0;
     .container {
-        background-color: #fff;
+      padding: 0 30px;
+      @include box-sizing;
+      @include screen('xs_mobile') {
+        @include gutter(30px); //gutter 代表左右要留白
+      }
     }
-    // 內頁標題設定
-    h1 {
-        line-height: 1.25em;
-        &.title {
-            color: $secondaryColor;
-            border-bottom: 1px solid $secondaryColor;
-            padding: 0px 0px 6px;
-            margin: 20px 0;
-            font-size: 1.625em;
-        }
-    }
-    >section {
-        padding: 0;
-        .container {
-            padding: 0 30px;
-            @include box-sizing;
-            @include screen('xs_mobile') {
-                @include gutter(30px); //gutter 代表左右要留白
-            }
-        }
-    }
+  }
 }
 .more {
-    text-align: center;
+  text-align: center;
+  display: inline-block;
+  float: right;
+  margin-bottom: 20px;
+  a {
     display: inline-block;
-    float: right;
-    margin-bottom: 20px;
-    a {
-        display: inline-block;
-        color: #333;
-        width: auto;
-        text-align: center;
-        padding: 0 38px 12px 0;
-        position: relative;
-        background-image: url('../images/more_icon02.png');
-        background-position: right 8px;
-        background-repeat: no-repeat;
-        transition: .5s;
-        @include box-sizing;
-        &:before {
-            content: '';
-            width: 100%;
-            height: 4px;
-            background-color: #212121;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-        &:after {
-            content: '';
-            width: 38px;
-            height: 4px;
-            background-color: #51ba77;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            transition: .5s;
-        }
-        &:hover,
-        &:focus {
-            padding: 0 45px 12px 0;
-            color: #51ba77;
-            font-size: 1.063em;
-            &:after {
-                content: '';
-                width: 100%;
-                height: 4px;
-                background-color: #51ba77;
-                position: absolute;
-                right: 0;
-                bottom: 0;
-            }
-        }
+    color: #333;
+    width: auto;
+    text-align: center;
+    padding: 0 38px 12px 0;
+    position: relative;
+    background-image: url('../images/more_icon02.png');
+    background-position: right 8px;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    @include box-sizing;
+    &:before {
+      content: '';
+      width: 100%;
+      height: 4px;
+      background-color: #212121;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
+    &:after {
+      content: '';
+      width: 38px;
+      height: 4px;
+      background-color: #51ba77;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transition: 0.5s;
+    }
+    &:hover,
+    &:focus {
+      padding: 0 45px 12px 0;
+      color: #51ba77;
+      font-size: 1.063em;
+      &:after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: #51ba77;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
 }
 .hidden {
-    display: none;
+  display: none;
 }
 @include screen('xs_mobile') {
-    .hidden-xs {
-        display: none;
-    }
+  .hidden-xs {
+    display: none;
+  }
 }
 a:focus {
-    box-shadow: 0 0 0 2px $color-yellow inset;
+  box-shadow: 0 0 0 2px $color-yellow inset;
 }
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
-    padding-top: 2em;
-    position: relative;
-    background-color: #fff;
-    @include screen('mobile') {
-        padding-top: 5em;
-    }
-    &:before {
-        content: '';
-        width: 100%;
-        height: 30px;
-        position: absolute;
-        top: 0;
-        background-color: $secondaryColor;
-        background-image: linear-gradient(90deg, #0057ab, #0190d4 100%);
-    }
-    >.container {
-        @include gutter(60px); //gutter 代表左右要留白
-    }
+  padding-top: 2em;
+  position: relative;
+  background-color: #fff;
+  @include screen('mobile') {
+    padding-top: 5em;
+  }
+  &:before {
+    content: '';
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    background-color: $secondaryColor;
+    background-image: linear-gradient(90deg, #0057ab, #0190d4 100%);
+  }
+  > .container {
+    @include gutter(60px); //gutter 代表左右要留白
+  }
 }
 /* ------------------說明區塊*/
 .explanation {
-    clear: both;
-    background-color: lighten($primaryColor, 60);
-    padding: 15px 20px;
-    margin: 0 0 20px;
-    line-height: 1.8em;
-    @include border-radius(5px);
-    .content {
-        overflow: hidden;
-    }
-    .title {
-        font-size: 1.562em;
-        margin: 10px 0;
-        font-weight: 600;
-    }
+  clear: both;
+  background-color: lighten($primaryColor, 60);
+  padding: 15px 20px;
+  margin: 0 0 20px;
+  line-height: 1.8em;
+  @include border-radius(5px);
+  .content {
+    overflow: hidden;
+  }
+  .title {
+    font-size: 1.562em;
+    margin: 10px 0;
+    font-weight: 600;
+  }
+  .image {
+    float: left;
+    margin: 10px 30px 10px 15px;
+  }
+  p {
+    margin: 0 0 10px !important;
+  }
+  .source {
+    color: #666;
+  }
+  @include screen('xs_mobile') {
     .image {
-        float: left;
-        margin: 10px 30px 10px 15px;
+      float: none;
+      margin: 10px auto;
+      text-align: center;
     }
-    p {
-        margin: 0 0 10px !important;
-    }
-    .source {
-        color: #666;
-    }
-    @include screen('xs_mobile') {
-        .image {
-            float: none;
-            margin: 10px auto;
-            text-align: center;
-        }
-    }
+  }
 }
 /*------------------------------------------bottomfunction*/
 .bottomfunction {
-    overflow: hidden;
-    padding: 10px 10px 10px 20px;
-    clear: both;
-    // border-top: 1px solid $primaryColor;
-    background-color: #eee;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    @include box-sizing;
+  overflow: hidden;
+  padding: 10px 10px 10px 20px;
+  clear: both;
+  // border-top: 1px solid $primaryColor;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  @include box-sizing;
+  @include screen('tablet') {
+    padding: 15px 10px 15px 20px;
+  }
+  .share2 {
+    float: left;
+    width: 320px;
     @include screen('tablet') {
-        padding: 15px 10px 15px 20px;
+      clear: both;
+      margin: 0 0 20px 0;
     }
-    .share2 {
+    span {
+      float: left;
+      margin: 8px 10px 0 0px;
+      @media (max-width: 350px) {
+        margin: 3px 10px 0 0px;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 0 5px 0 0;
         float: left;
-        width: 320px;
-        @include screen('tablet') {
-            clear: both;
-            margin: 0 0 20px 0;
+        a {
+          display: block;
+          background-color: #999;
+          border-radius: 5px;
+          width: 35px;
+          height: 35px;
+          &.fb {
+            background-color: #3b5997;
+          }
+          &.google {
+            background-color: #df2f2f;
+          }
+          &.twitter {
+            background-color: #000;
+          }
+          &.line {
+            background-color: #00c214;
+          }
+          &.forward {
+            background-color: #87cd27;
+          }
+          &.print {
+            background-color: #5c64b5;
+          }
         }
-        span {
-            float: left;
-            margin: 8px 10px 0 0px;
-            @media (max-width: 350px) {
-                margin: 3px 10px 0 0px
-            }
+        img {
+          width: 35px;
+          height: 35px;
+          @media (max-width: 350px) {
+            width: 32px;
+            height: 32px;
+          }
         }
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            li {
-                margin: 0 5px 0 0;
-                float: left;
-                a {
-                    display: block;
-                    background-color: #999;
-                    border-radius: 5px;
-                    width: 35px;
-                    height: 35px;
-                    &.fb {
-                        background-color: #3b5997
-                    }
-                    &.google {
-                        background-color: #df2f2f
-                    }
-                    &.twitter {
-                        background-color: #55acec
-                    }
-                    &.line {
-                        background-color: #00c214
-                    }
-                    &.forward {
-                        background-color: #87cd27
-                    }
-                    &.print {
-                        background-color: #5c64b5
-                    }
-                }
-                img {
-                    width: 35px;
-                    height: 35px;
-                    @media (max-width: 350px) {
-                        width: 32px;
-                        height: 32px;
-                    }
-                }
-            }
-        }
+      }
     }
-    .data {
-        float: right;
-        margin: 8px 0 0;
-        @include screen('tablet') {
-            clear: both;
-            float: none;
-        }
-        ul {
-            margin: 0;
-            padding: 0;
-            li {
-                margin: 0 15px 5px 0;
-                display: inline-block;
-                border-right: 1px solid #999;
-                padding: 0 15px 0 0;
-                @include screen('xs_mobile') {
-                    display: block;
-                    border: none;
-                    margin: 0 0 7px 0;
-                    background-image: url(../images/link_icon01.png);
-                    background-repeat: no-repeat;
-                    background-position: 0 7px;
-                    padding: 0 0 0 15px;
-                }
-                a {
-                    color: #333;
-                    text-decoration: none;
-                    &:hover {
-                        color: #C00;
-                        text-decoration: underline
-                    }
-                }
-                &:last-child {
-                    border-right: none;
-                    margin: 0;
-                }
-            }
-        }
+  }
+  .data {
+    float: right;
+    margin: 8px 0 0;
+    @include screen('tablet') {
+      clear: both;
+      float: none;
     }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0 15px 5px 0;
+        display: inline-block;
+        border-right: 1px solid #999;
+        padding: 0 15px 0 0;
+        @include screen('xs_mobile') {
+          display: block;
+          border: none;
+          margin: 0 0 7px 0;
+          background-image: url(../images/link_icon01.png);
+          background-repeat: no-repeat;
+          background-position: 0 7px;
+          padding: 0 0 0 15px;
+        }
+        a {
+          color: #333;
+          text-decoration: none;
+          &:hover {
+            color: #c00;
+            text-decoration: underline;
+          }
+        }
+        &:last-child {
+          border-right: none;
+          margin: 0;
+        }
+      }
+    }
+  }
 }
 //首頁h2設定
 //h2淺底
 .block01_h2 {
-    background-color: $secondaryColor;
-    color: #fff;
-    font-size: 1.5em;
-    padding: 20px 10px;
-    text-align: center;
-    font-weight: 400;
-    letter-spacing: .05em;
-    margin: 0 0 10px 0;
+  background-color: $secondaryColor;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 20px 10px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px 0;
 }
 //h2 有底線
 .block02_h2 {
-    font-size: 1.875em;
-    display: inline-block;
-    position: relative;
-    padding: 10px 0;
-    margin: 0 0 50px;
-    background-image: url('../images/h2_line.gif');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    // &:before {
-    //     content: '';
-    //     width: 40px;
-    //     height: 2px;
-    //     position: absolute;
-    //     background-color: $lightColor;
-    //     bottom: -10px;
-    //     left: 35%;
-    // }
+  font-size: 1.875em;
+  display: inline-block;
+  position: relative;
+  padding: 10px 0;
+  margin: 0 0 50px;
+  background-image: url('../images/h2_line.gif');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  // &:before {
+  //     content: '';
+  //     width: 40px;
+  //     height: 2px;
+  //     position: absolute;
+  //     background-color: $lightColor;
+  //     bottom: -10px;
+  //     left: 35%;
+  // }
 }
 //h2深底
 .block03_h2 {
-    background-color: $lightColor;
-    color: #fff;
-    margin: -50px 0 10px 0;
-    padding: 20px;
-    text-align: center;
-    font-weight: 400;
+  background-color: $lightColor;
+  color: #fff;
+  margin: -50px 0 10px 0;
+  padding: 20px;
+  text-align: center;
+  font-weight: 400;
 }
 // 主題館首頁h2
 .Themeblock_h2 {
-    color: #fff;
-    font-size: 1.875em;
-    text-align: center;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    letter-spacing: 0.15em;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 400;
-    // outline: 1px solid red;
-    display: inline-block;
-    span {
-        display: block;
-        padding-top: 15px;
-        font-size: 0.55em;
-        letter-spacing: 0.2em;
-        font-family: 'Roboto Condensed', sans-serif;
-    }
+  color: #fff;
+  font-size: 1.875em;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.15em;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  // outline: 1px solid red;
+  display: inline-block;
+  span {
+    display: block;
+    padding-top: 15px;
+    font-size: 0.55em;
+    letter-spacing: 0.2em;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
 }

@@ -5051,7 +5051,7 @@ body.noscroll {
 }
 @media screen and (max-width: 767px) {
   .wrapper {
-    background: #FFF;
+    background: #fff;
   }
 }
 
@@ -5304,7 +5304,7 @@ a:focus {
   background-color: #df2f2f;
 }
 .bottomfunction .share2 ul li a.twitter {
-  background-color: #55acec;
+  background-color: #000;
 }
 .bottomfunction .share2 ul li a.line {
   background-color: #00c214;
@@ -5361,7 +5361,7 @@ a:focus {
   text-decoration: none;
 }
 .bottomfunction .data ul li a:hover {
-  color: #C00;
+  color: #c00;
   text-decoration: underline;
 }
 .bottomfunction .data ul li:last-child {
