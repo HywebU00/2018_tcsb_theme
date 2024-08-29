@@ -1334,10 +1334,18 @@ $(function () {
       $('.header .search').hide();
     });
 });
-$(document).ready(function () {
-  $('[data-fancybox]').fancybox({
-    afterLoad: function (instance, current) {
-      current.$image.attr('alt', current.opts.$orig.find('img').attr('alt'));
-    },
-  });
+// $(document).ready(function () {
+//   $('[data-fancybox]').fancybox({
+//     afterLoad: function (instance, current) {
+//       current.$image.attr('alt', current.opts.$orig.find('img').attr('alt'));
+//     },
+//   });
+// });
+$(function () {
+  // -----   fancyBox新增需要綁定才有效果
+  if ($('[data-fancybox="gallery"]').length > 0) {
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      l10n: Fancybox.l10n.zh_TW,
+    });
+  }
 });
