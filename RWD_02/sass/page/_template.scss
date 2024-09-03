@@ -75,7 +75,7 @@ body {
   > section {
     padding: 0;
     .container {
-      padding: 1em 30px 1em;
+      padding: 0.5em 30px 0.5em;
       @include box-sizing;
       @include screen('xs_mobile') {
         @include gutter(30px); //gutter 代表左右要留白

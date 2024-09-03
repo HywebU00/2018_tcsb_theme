@@ -216,29 +216,32 @@
   }
 }
 .themewrapper {
-  .Imagebanner_block2 {
-    width: 100%;
-    // border: 1px solid red;
-    margin-bottom: 2em;
-    .Imagebanner {
-      .images {
-        @include aspect-ratio(1500, 420);
-      }
-    }
-  }
-}
-//
-.themewrapper {
   .main {
-    .Imagebanner_block {
-      .img-container {
-        @include screen('tablet') {
-          padding-top: 0px;
+    padding-top: 0;
+    .Imagebanner_block2 {
+      width: 100%;
+      margin-bottom: 1.5em;
+      .Imagebanner {
+        .images {
+          @include aspect-ratio(1024, 210);
         }
       }
     }
   }
 }
+//
+// .themewrapper {
+//   .main {
+//     padding-top: 0;
+//     .Imagebanner_block {
+//       .img-container {
+//         @include screen('tablet') {
+//           padding-top: 0px;
+//         }
+//       }
+//     }
+//   }
+// }
 //跑馬燈
 .marquee {
   height: 45px;
