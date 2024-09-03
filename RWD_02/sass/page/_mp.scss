@@ -222,7 +222,7 @@
     margin-bottom: 2em;
     .Imagebanner {
       .images {
-        @include aspect-ratio(5, 1.4);
+        @include aspect-ratio(1500, 420);
       }
     }
   }
