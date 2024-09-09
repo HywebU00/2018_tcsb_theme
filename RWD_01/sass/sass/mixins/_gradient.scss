@@ -2,7 +2,7 @@
 @mixin gradient($start-color, $end-color, $orientation) {
   background: $start-color;
   @if $orientation == 'vertical' {
-    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: -webkit-linear-gradient(to bottom, $start-color, $end-color);
     background: linear-gradient(to bottom, $start-color, $end-color);
   } @else if $orientation == 'horizontal' {
     background: -webkit-linear-gradient(left, $start-color, $end-color);
