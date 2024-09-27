@@ -769,17 +769,39 @@ $(function () {
     ],
   });
   //
-  // 無障礙打開search
+  /*-----------------------------------*/
+  /////////// 無障礙快捷鍵盤組合  //////////
+  /*-----------------------------------*/
   $(document).on('keydown', function (e) {
+    // alt+S 查詢
     if (e.altKey && e.keyCode == 83) {
       $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
-      $('.search').fadeIn();
+      $('.search').show();
+      $('.m_search').hide();
       $('.search').find('input[type="text"]').focus();
-      // console.log("ok");
     }
-    if (e.keyCode == 27) {
-      $('.search').hide();
-      $('.search').find('input[type="text"]').focusout();
+    // alt+U header
+    if (e.altKey && e.keyCode == 85) {
+      $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+      $('header').find('.accesskey').focus();
+    }
+    // alt+C 主要內容區
+    if (e.altKey && e.keyCode == 67) {
+      $('html, body')
+        .stop(true, true)
+        .animate({ scrollTop: $('.main').find('.accesskey').offset().top - 70 }, 800, 'easeOutExpo');
+      $('.main').find('.accesskey').focus();
+    }
+    // alt+B footer
+    if (e.altKey && e.keyCode == 66) {
+      $('html, body')
+        .stop(true, true)
+        .animate({ scrollTop: $('footer').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+      $('footer').find('.accesskey').focus();
+    }
+
+    if (e.key == 'Escape') {
+      $('.search').slideUp();
     }
   });
   //
