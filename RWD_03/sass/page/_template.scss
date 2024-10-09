@@ -70,9 +70,19 @@ body {
 }
 // header
 .themewrapper {
-  header {
+  .header {
     position: absolute;
+    .Logo {
+      margin: 20px 0 0px 20px;
+      @media (max-width: 900px) {
+        margin: 20px 0 15px 20px;
+      }
+      @include screen('mobile') {
+        margin: 0;
+      }
+    }
   }
+
   .main {
     .accesskey {
       color: #e5e5e5;

@@ -58,6 +58,7 @@ $(function () {
     fade: true,
     cssEase: 'ease',
   });
+
   //bigpicture
   $('.bigbanner_slider').slick({
     dots: true,

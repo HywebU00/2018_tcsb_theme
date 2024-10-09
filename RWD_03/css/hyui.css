@@ -5194,8 +5194,21 @@ body.noscroll {
   padding-bottom: 25px;
 }
 
-.themewrapper header {
+.themewrapper .header {
   position: absolute;
+}
+.themewrapper .header .Logo {
+  margin: 20px 0 0px 20px;
+}
+@media (max-width: 900px) {
+  .themewrapper .header .Logo {
+    margin: 20px 0 15px 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .themewrapper .header .Logo {
+    margin: 0;
+  }
 }
 .themewrapper .main .accesskey {
   color: #e5e5e5;
@@ -5888,12 +5901,12 @@ a:focus {
 }
 @media screen and (max-width: 767px) {
   .Imagebanner_block {
-    margin-top: -50px;
+    margin-top: -40px;
   }
 }
 @media screen and (max-width: 575px) {
   .Imagebanner_block {
-    margin-top: -20px;
+    margin-top: -30px;
   }
 }
 .Imagebanner_block .img-container {
@@ -5982,6 +5995,121 @@ a:focus {
   left: 0;
 }
 .Imagebanner_block .slick-next {
+  right: 0;
+}
+
+.Imagebanner_block2 {
+  overflow: hidden;
+  padding: 0 !important;
+  background-color: #f0f0f0;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767px) {
+  .Imagebanner_block2 {
+    margin-top: -40px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .Imagebanner_block2 {
+    margin-top: -30px;
+  }
+}
+.Imagebanner_block2 .img-container {
+  height: auto;
+  width: 100%;
+}
+@media (max-width: 1350px) {
+  .Imagebanner_block2 .img-container {
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .Imagebanner_block2 .img-container {
+    height: auto;
+    width: 100%;
+    padding-top: 50px;
+  }
+}
+@media (max-width: 900px) {
+  .Imagebanner_block2 .img-container {
+    padding-top: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Imagebanner_block2 .img-container {
+    padding-top: 0px;
+  }
+}
+.Imagebanner_block2 .img-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.Imagebanner_block2 .img-container a img {
+  width: 100%;
+  height: 100%;
+}
+.Imagebanner_block2 .img-container a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid #ffc000;
+  display: none;
+}
+.Imagebanner_block2 .img-container a:focus:before {
+  display: block;
+}
+.Imagebanner_block2 .container {
+  padding: 0 !important;
+}
+.Imagebanner_block2 .container .col-xs-12 {
+  padding-bottom: 0px !important;
+}
+.Imagebanner_block2 .slick-dots {
+  bottom: 20px !important;
+}
+@media screen and (max-width: 767px) {
+  .Imagebanner_block2 .slick-dots {
+    bottom: 5px !important;
+  }
+}
+.Imagebanner_block2 .slick-dots li button:before {
+  background-color: #fff;
+  opacity: 1;
+}
+.Imagebanner_block2 .slick-dots li.slick-active button:before {
+  background-color: #4a7891;
+}
+.Imagebanner_block2 .slick-dots li button:hover:before,
+.Imagebanner_block2 .slick-dots li button:focus:before {
+  box-shadow: 0 0 0 2px #FCC211;
+}
+.Imagebanner_block2 .slick-prev,
+.Imagebanner_block2 .slick-next {
+  width: 50px !important;
+  height: 70px !important;
+}
+@media screen and (max-width: 991px) {
+  .Imagebanner_block2 .slick-prev,
+  .Imagebanner_block2 .slick-next {
+    top: 60%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .Imagebanner_block2 .slick-prev,
+  .Imagebanner_block2 .slick-next {
+    width: 40px !important;
+    height: 60px !important;
+    background-size: 60% !important;
+  }
+}
+.Imagebanner_block2 .slick-prev {
+  left: 0;
+}
+.Imagebanner_block2 .slick-next {
   right: 0;
 }
 
@@ -6887,13 +7015,13 @@ a:focus {
 .accordionblock .accordion ul li {
   text-align: left;
   display: block;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
 }
 .accordionblock .accordion ul li a {
   display: block;
   background: url("../images/icon_plus.png") no-repeat right 22px #61899b;
   padding: 1em;
-  color: #FFF;
+  color: #fff;
   position: relative;
   font-size: 1.25em;
 }
@@ -6911,7 +7039,7 @@ a:focus {
 .accordionblock .accordion ul li .accordion-content {
   position: relative;
   padding: 1em 1em 2em 1em;
-  background: #FFF;
+  background: #fff;
   line-height: 1.65em;
 }
 .accordionblock .accordion ul li .accordion-content .image {
