@@ -536,22 +536,22 @@ $(function () {
   /////click event to scroll to top//////
   /*-----------------------------------*/
 
-  // $('.scrollToTop')
-  //   .off()
-  //   .on('click', function (e) {
-  //     $('html, body').stop().animate({ scrollTop: 0 }, 400, 'linear');
-  //     $('a.goCenter').focus(); //加入這行
-  //     e.preventDefault();
-  //   });
+  $('.scrollToTop')
+    .off()
+    .on('click', function (e) {
+      $('html, body').stop().animate({ scrollTop: 0 }, 400, 'linear');
+      $('a.goCenter').focus(); //加入這行
+      e.preventDefault();
+    });
 
-  $('.scrollToTop').click(function (e) {
-    $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
-    e.preventDefault();
-  });
-  $('.scrollToTop').keydown(function (e) {
-    _body.find('a.goCenter').focus();
-    e.preventDefault();
-  });
+  // $('.scrollToTop').click(function (e) {
+  //   $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
+  //   e.preventDefault();
+  // });
+  // $('.scrollToTop').keydown(function (e) {
+  //   _body.find('a.goCenter').focus();
+  //   e.preventDefault();
+  // });
   /*--------------------------------------------------------*/
   /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
   /*--------------------------------------------------------*/
