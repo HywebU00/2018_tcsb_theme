@@ -1,189 +1,196 @@
 .tabSet {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  @include clearfix;
+  @include screen('mobile') {
     max-width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    @include clearfix;
-    @include screen('mobile') {
-        max-width: 100%;
-        width: auto;
-        height: auto !important;
-    }
+    width: auto;
+    height: auto !important;
+  }
 }
 .tabs {
+  position: relative;
+
+  & > .tabItem {
+    border-radius: 0;
     position: relative;
-   
-    &>.tabItem {
-        border-radius: 0;
-        position: relative;
-        font-size: 1.25em;
-        float: left;
-        line-height: 1;
-        display: block;
-        padding: 18px 0 16px;
-        text-align: center;
-        font-weight: bold;
-        text-decoration: none;
-        border: none;
-        background-color: #616770;
-        color: #fff;
-        &:hover, &:focus {
-            background: lighten($primaryColor, 40);
-            box-shadow: none;
-            color: $primaryColor;
-        }
-        &.active {
-            background-color: $primaryColor;
-            color: #FFF;
-            background-image: none;
-            &:before {
-                content: '';
-                border: 15px solid $primaryColor;
-                border-color: $primaryColor transparent transparent transparent;
-                position: absolute;
-                bottom: -30px;
-                left: 48%;
-                @include screen('mobile') {
-                    left: 48%;
-                }
-            }
-        }
+    font-size: 1.25em;
+    float: left;
+    line-height: 1;
+    display: block;
+    padding: 18px 0 16px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background-color: #616770;
+    color: #fff;
+    &:hover,
+    &:focus {
+      background: lighten($primaryColor, 40);
+      box-shadow: none;
+      color: $primaryColor;
     }
+    &.active {
+      background-color: $primaryColor;
+      color: #fff;
+      background-image: none;
+      &:before {
+        content: '';
+        border: 15px solid $primaryColor;
+        border-color: $primaryColor transparent transparent transparent;
+        position: absolute;
+        bottom: -30px;
+        left: 48%;
+        @include screen('mobile') {
+          left: 48%;
+        }
+      }
+    }
+  }
 }
 //多組 可設定差異
 .example-2 {
-    .tabItem>a:hover {
-        background: $secondaryColor;
-    }
-    .tabItem.active>a {
-        background: $secondaryColor;
-    }
+  .tabItem > a:hover {
+    background: $secondaryColor;
+  }
+  .tabItem.active > a {
+    background: $secondaryColor;
+  }
 }
 // 顯示content
-.active+.tabContent {
-    display: block;
+.active + .tabContent {
+  display: block;
 }
 .tabContent {
-    position: absolute;
-    top: auto;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  clear: both;
+  padding: 30px 0px;
+  display: none;
+  @include screen('mobile') {
+    position: static;
+  }
+  figure {
+    float: left;
+    margin: 0 25px 15px 0;
+    img {
+      width: 300px;
+    }
+    @media (max-width: 700px) {
+      float: none;
+      margin: 0 0 15px 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .title {
+    margin: 0 0 20px;
+    font-size: 1.188em;
+    font-weight: bold;
+    @include text-overflow;
+    a {
+      span {
+        color: $primaryColor;
+        margin: 0 1em 0 0;
+      }
+      color: $color-word;
+      &:hover,
+      &:focus {
+        color: $primaryColor;
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0 0 15px;
+    padding: 0;
+    line-height: 1.6;
     clear: both;
-    padding: 30px 0px;
-    display: none;
-    @include screen('mobile') {
-        position: static;
+    float: none;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px #dcdcdc solid;
+    a {
+      @include aSetting_nocolor;
+      display: block;
+      padding: 10px 0;
+      @include text-overflow();
+      span {
+        display: inline-block;
+        margin: 0 1em 0 0;
+        font-size: 1em;
+        color: $primaryColor;
+      }
     }
-    figure {
-        float: left;
-        margin: 0 25px 15px 0;
-        img {
-            width: 300px;
-        }
-        @media(max-width: 700px) {
-            float: none;
-            margin: 0 0 15px 0;
-            img {
-                width: 100%;
-            }
-        }
-    }
-    h3 {
-        margin: 0 0 20px;
-        @include text-overflow;
-        a {
-            span {
-                color: $primaryColor;
-                margin: 0 1em 0 0;
-            }
-            color: $color-word;
-            &:hover, &:focus {
-                color: $primaryColor;
-            }
-        }
-    }
-    ul {
-        list-style-type: none;
-        margin: 0 0 15px;
-        padding: 0;
-        line-height: 1.6;
-        clear: both;
-        float: none;
-    }
-    li {
-        margin: 0;
-        padding: 0;
-        border-bottom: 1px #dcdcdc solid;
-        a {
-            @include aSetting_nocolor;
-            display: block;
-            padding: 10px 0;
-            @include text-overflow();
-            span {
-                display: inline-block;
-                margin: 0 1em 0 0;
-                font-size: 1em;
-                color: $primaryColor;
-            }
-        }
-    }
+  }
 }
 //
 .accordion_tab {
-    &>.tabItem {
-        &.active>a {
-            background-color: $secondaryColor !important;
-            color: #fff;
-            @include screen('mobile') {
-                border-radius: 10px 10px 0 0;
-            }
-            &:before {
-                content: '';
-                border: none;
-            }
-        }
-        &>a {
-            display: block;
-            padding: 15px 0;
-            border: 3px solid $secondaryColor;
-            border-bottom: none;
-            text-align: center;
-            background-color: #fff;
-            color: $secondaryColor;
-            text-decoration: none;
-            border-radius: 10px 10px 0 0;
-            @include screen('mobile') {
-                border: 2px solid $secondaryColor;
-                border-radius: 10px;
-            }
-            &:hover, &:focus {
-                background-color: $secondaryColor;
-                color: #fff;
-            }
-        }
+  & > .tabItem {
+    &.active > a {
+      background-color: $secondaryColor !important;
+      color: #fff;
+      @include screen('mobile') {
+        border-radius: 10px 10px 0 0;
+      }
+      &:before {
+        content: '';
+        border: none;
+      }
     }
-    .tabContent {
-        border-top: 8px solid $secondaryColor;
-        background-color: lighten($secondaryColor, 50);
-        table {
-            th, td {
-                padding: 15px 20px;
-                border: none;
-                border-bottom: 1px solid lighten($secondaryColor, 40);
-            }
-            th {
-                width: 45%;
-                text-align: right;
-                background-color: transparent;
-                color: darken($secondaryColor, 20);
-                @include screen('mobile') {
-                    white-space: normal !important;
-                }
-            }
-            tr:last-child {
-                th, td {
-                    border-bottom: none;
-                }
-            }
-        }
+    & > a {
+      display: block;
+      padding: 15px 0;
+      border: 3px solid $secondaryColor;
+      border-bottom: none;
+      text-align: center;
+      background-color: #fff;
+      color: $secondaryColor;
+      text-decoration: none;
+      border-radius: 10px 10px 0 0;
+      @include screen('mobile') {
+        border: 2px solid $secondaryColor;
+        border-radius: 10px;
+      }
+      &:hover,
+      &:focus {
+        background-color: $secondaryColor;
+        color: #fff;
+      }
     }
+  }
+  .tabContent {
+    border-top: 8px solid $secondaryColor;
+    background-color: lighten($secondaryColor, 50);
+    table {
+      th,
+      td {
+        padding: 15px 20px;
+        border: none;
+        border-bottom: 1px solid lighten($secondaryColor, 40);
+      }
+      th {
+        width: 45%;
+        text-align: right;
+        background-color: transparent;
+        color: darken($secondaryColor, 20);
+        @include screen('mobile') {
+          white-space: normal !important;
+        }
+      }
+      tr:last-child {
+        th,
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
 }

@@ -1788,7 +1788,7 @@ img.img_circle {
 }
 .tabs > .tabItem.active {
   background-color: #4a7891;
-  color: #FFF;
+  color: #fff;
   background-image: none;
 }
 .tabs > .tabItem.active:before {
@@ -1846,20 +1846,22 @@ img.img_circle {
     width: 100%;
   }
 }
-.tabContent h3 {
+.tabContent .title {
   margin: 0 0 20px;
+  font-size: 1.188em;
+  font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.tabContent h3 a {
+.tabContent .title a {
   color: #353535;
 }
-.tabContent h3 a span {
+.tabContent .title a span {
   color: #4a7891;
   margin: 0 1em 0 0;
 }
-.tabContent h3 a:hover, .tabContent h3 a:focus {
+.tabContent .title a:hover, .tabContent .title a:focus {
   color: #4a7891;
 }
 .tabContent ul {

@@ -1,126 +1,130 @@
 .tabSet {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  @include clearfix;
+  @include screen('mobile') {
     max-width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    @include clearfix;
-    @include screen('mobile') {
-        max-width: 100%;
-        width: auto;
-        height: auto !important;
-    }
+    width: auto;
+    height: auto !important;
+  }
 }
 .tabs {
+  position: relative;
+  & > .tabItem {
     position: relative;
-    &>.tabItem {
-        position: relative;
-        font-size: 1.25em;
-        float: left;
-        padding: 18px 0 16px;
-        text-align: center;
-        line-height: 1;
-        font-weight: normal;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-        background-color: $color-gray;
-        border: none;
-        &:hover, &:focus {
-            background: $primaryColor;
-            color: #fff;
-        }
-        &.active {
-            background-color: $primaryColor;
-            color: #FFF;
-            background-image: none;
-            &:before {
-                content: '';
-                border: 15px solid $primaryColor;
-                border-color: $primaryColor transparent transparent transparent;
-                position: absolute;
-                bottom: -30px;
-                left: 46%;
-                @include screen('mobile') {
-                    left: 48%;
-                }
-            }
-        }
+    font-size: 1.25em;
+    float: left;
+    padding: 18px 0 16px;
+    text-align: center;
+    line-height: 1;
+    font-weight: normal;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    background-color: $color-gray;
+    border: none;
+    &:hover,
+    &:focus {
+      background: $primaryColor;
+      color: #fff;
     }
+    &.active {
+      background-color: $primaryColor;
+      color: #fff;
+      background-image: none;
+      &:before {
+        content: '';
+        border: 15px solid $primaryColor;
+        border-color: $primaryColor transparent transparent transparent;
+        position: absolute;
+        bottom: -30px;
+        left: 46%;
+        @include screen('mobile') {
+          left: 48%;
+        }
+      }
+    }
+  }
 }
 //多組 可設定差異
 .example-2 {
-    .tabItem>a:hover {
-        background: $secondaryColor;
-    }
-    .tabItem.active>a {
-        background: $secondaryColor;
-    }
+  .tabItem > a:hover {
+    background: $secondaryColor;
+  }
+  .tabItem.active > a {
+    background: $secondaryColor;
+  }
 }
 // 顯示content
-.active+.tabContent {
-    display: block;
+.active + .tabContent {
+  display: block;
 }
 .tabContent {
-    position: absolute;
-    top: auto;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  clear: both;
+  padding: 30px 0px;
+  display: none;
+  @include screen('mobile') {
+    position: static;
+  }
+  figure {
+    float: left;
+    margin: 0 25px 15px 0;
+    img {
+      width: 300px;
+    }
+    @media (max-width: 700px) {
+      float: none;
+      margin: 0 0 15px 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .title {
+    margin: 0 0 20px;
+    font-size: 1.188em;
+    font-weight: bold;
+    @include text-overflow;
+    a {
+      span {
+        color: $primaryColor;
+        margin: 0 1em 0 0;
+      }
+      color: $color-word;
+      &:hover,
+      &:focus {
+        color: $primaryColor;
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0 0 15px;
+    padding: 0;
+    line-height: 1.6;
     clear: both;
-    padding: 30px 0px;
-    display: none;
-    @include screen('mobile') {
-        position: static;
+    float: none;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px #dcdcdc solid;
+    a {
+      @include aSetting_nocolor;
+      display: block;
+      padding: 10px 0;
+      @include text-overflow();
+      span {
+        display: inline-block;
+        margin: 0 1em 0 0;
+        font-size: 1em;
+        color: $primaryColor;
+      }
     }
-    figure {
-        float: left;
-        margin: 0 25px 15px 0;
-        img {
-            width: 300px;
-        }
-        @media(max-width: 700px) {
-            float: none;
-            margin: 0 0 15px 0;
-            img {
-                width: 100%;
-            }
-        }
-    }
-    h3 {
-        margin: 0 0 20px;
-        @include text-overflow;
-        a {
-            span {
-                color: $primaryColor;
-                margin: 0 1em 0 0;
-            }
-            color: $color-word;
-            &:hover, &:focus {
-                color: $primaryColor;
-            }
-        }
-    }
-    ul {
-        list-style-type: none;
-        margin: 0 0 15px;
-        padding: 0;
-        line-height: 1.6;
-        clear: both;
-        float: none;
-    }
-    li {
-        margin: 0;
-        padding: 0;
-        border-bottom: 1px #dcdcdc solid;
-        a {
-            @include aSetting_nocolor;
-            display: block;
-            padding: 10px 0;
-            @include text-overflow();
-            span {
-                display: inline-block;
-                margin: 0 1em 0 0;
-                font-size: 1em;
-                color: $primaryColor;
-            }
-        }
-    }
+  }
 }

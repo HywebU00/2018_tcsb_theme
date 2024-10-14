@@ -1793,7 +1793,7 @@ img.img_circle {
 }
 .tabs > .tabItem.active {
   background-color: #0057ab;
-  color: #FFF;
+  color: #fff;
   background-image: none;
 }
 .tabs > .tabItem.active:before {
@@ -1851,20 +1851,22 @@ img.img_circle {
     width: 100%;
   }
 }
-.tabContent h3 {
+.tabContent .title {
   margin: 0 0 20px;
+  font-size: 1.188em;
+  font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.tabContent h3 a {
+.tabContent .title a {
   color: #353535;
 }
-.tabContent h3 a span {
+.tabContent .title a span {
   color: #0057ab;
   margin: 0 1em 0 0;
 }
-.tabContent h3 a:hover, .tabContent h3 a:focus {
+.tabContent .title a:hover, .tabContent .title a:focus {
   color: #0057ab;
 }
 .tabContent ul {
@@ -1938,7 +1940,8 @@ img.img_circle {
   border-top: 8px solid #0190d4;
   background-color: #d5f1ff;
 }
-.accordion_tab .tabContent table th, .accordion_tab .tabContent table td {
+.accordion_tab .tabContent table th,
+.accordion_tab .tabContent table td {
   padding: 15px 20px;
   border: none;
   border-bottom: 1px solid #a2e1ff;
@@ -1954,7 +1957,8 @@ img.img_circle {
     white-space: normal !important;
   }
 }
-.accordion_tab .tabContent table tr:last-child th, .accordion_tab .tabContent table tr:last-child td {
+.accordion_tab .tabContent table tr:last-child th,
+.accordion_tab .tabContent table tr:last-child td {
   border-bottom: none;
 }
 
