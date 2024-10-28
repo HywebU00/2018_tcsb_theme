@@ -6808,13 +6808,13 @@ a:focus {
 .accordionblock .accordion ul li {
   text-align: left;
   display: block;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
 }
 .accordionblock .accordion ul li a {
   display: block;
   background: url("../images/icon_plus.png") no-repeat right 22px #3896cb;
   padding: 1em;
-  color: #FFF;
+  color: #fff;
   position: relative;
   font-size: 1.25em;
 }
@@ -6832,7 +6832,7 @@ a:focus {
 .accordionblock .accordion ul li .accordion-content {
   position: relative;
   padding: 1em 1em 2em 1em;
-  background: #FFF;
+  background: #fff;
   line-height: 1.65em;
 }
 .accordionblock .accordion ul li .accordion-content .image {
@@ -7251,6 +7251,11 @@ a:focus {
   text-align: center;
   width: 430px;
   margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .fbblock {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .fbblock {
@@ -8570,19 +8575,23 @@ a:focus {
 .audiovisual_block .audiovisual .content .more {
   margin-top: 30px;
 }
-.audiovisual_block .audiovisual .content .pic01, .audiovisual_block .audiovisual .content .pic02 {
+.audiovisual_block .audiovisual .content .pic01,
+.audiovisual_block .audiovisual .content .pic02 {
   display: flex;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 575px) {
-  .audiovisual_block .audiovisual .content .pic01, .audiovisual_block .audiovisual .content .pic02 {
+  .audiovisual_block .audiovisual .content .pic01,
+  .audiovisual_block .audiovisual .content .pic02 {
     display: block;
   }
 }
-.audiovisual_block .audiovisual .content .pic01 .image img, .audiovisual_block .audiovisual .content .pic02 .image img {
+.audiovisual_block .audiovisual .content .pic01 .image img,
+.audiovisual_block .audiovisual .content .pic02 .image img {
   width: auto;
 }
-.audiovisual_block .audiovisual .content .pic01 .img-container, .audiovisual_block .audiovisual .content .pic02 .img-container {
+.audiovisual_block .audiovisual .content .pic01 .img-container,
+.audiovisual_block .audiovisual .content .pic02 .img-container {
   flex: 0 0 50%;
   flex-basis: 50%;
   height: 178px;
@@ -8590,11 +8599,13 @@ a:focus {
   text-align: right;
 }
 @media screen and (max-width: 575px) {
-  .audiovisual_block .audiovisual .content .pic01 .img-container, .audiovisual_block .audiovisual .content .pic02 .img-container {
+  .audiovisual_block .audiovisual .content .pic01 .img-container,
+  .audiovisual_block .audiovisual .content .pic02 .img-container {
     max-width: 100%;
   }
 }
-.audiovisual_block .audiovisual .content .pic01 .img-container .explain, .audiovisual_block .audiovisual .content .pic02 .img-container .explain {
+.audiovisual_block .audiovisual .content .pic01 .img-container .explain,
+.audiovisual_block .audiovisual .content .pic02 .img-container .explain {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -8613,7 +8624,8 @@ a:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a5d251", endColorstr="#c7016e29", GradientType=1);
   /* IE6-9 */
 }
-.audiovisual_block .audiovisual .content .pic01 .img-container .explain span, .audiovisual_block .audiovisual .content .pic02 .img-container .explain span {
+.audiovisual_block .audiovisual .content .pic01 .img-container .explain span,
+.audiovisual_block .audiovisual .content .pic02 .img-container .explain span {
   color: #fff;
   font-size: 1.25em;
   letter-spacing: 0.1em;

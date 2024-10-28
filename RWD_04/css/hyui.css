@@ -5919,7 +5919,7 @@ textblock .section {
   height: 45px;
   display: block;
   overflow: hidden;
-  background: #FFF;
+  background: #fff;
   margin: 2em 4em;
   text-align: left;
   padding: 0 3em 0 2em;
@@ -6937,13 +6937,13 @@ textblock .section {
 .accordionblock .accordion ul li {
   text-align: left;
   display: block;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
 }
 .accordionblock .accordion ul li a {
   display: block;
   background: url("../images/icon_plus.png") no-repeat right 22px #53bbc8;
   padding: 1em;
-  color: #FFF;
+  color: #fff;
   position: relative;
   font-size: 1.25em;
 }
@@ -6961,7 +6961,7 @@ textblock .section {
 .accordionblock .accordion ul li .accordion-content {
   position: relative;
   padding: 1em 1em 2em 1em;
-  background: #FFF;
+  background: #fff;
   line-height: 1.65em;
 }
 .accordionblock .accordion ul li .accordion-content .image {
@@ -7352,6 +7352,11 @@ textblock .section {
   text-align: center;
   width: 430px;
   margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .fbblock {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .fbblock {

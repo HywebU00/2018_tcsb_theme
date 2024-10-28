@@ -1,1787 +1,1791 @@
 /////////////////////////////////////////////////////////以下為demo範例///
 // 首頁區塊設定
 .section {
-    padding: 0;
-    text-align: center;
-    // [class^="col"] {
-    //     border: 2px solid #FFF;
-    //     background: #DEDEDE;
-    //     min-height: 250px;
-    //     color: $primaryColor;
-    //     text-align: center;
-    //     line-height: 250px;
-    //     font-size: 1.5em;
-    //     font-weight: bold;
-    //     @include box-sizing();
-    // }
-    // &+.section {
-    //     padding-top: 2em;
-    // }
+  padding: 0;
+  text-align: center;
+  // [class^="col"] {
+  //     border: 2px solid #FFF;
+  //     background: #DEDEDE;
+  //     min-height: 250px;
+  //     color: $primaryColor;
+  //     text-align: center;
+  //     line-height: 250px;
+  //     font-size: 1.5em;
+  //     font-weight: bold;
+  //     @include box-sizing();
+  // }
+  // &+.section {
+  //     padding-top: 2em;
+  // }
 }
 // 單欄
 .col-12 {
-    .container {
-        max-width: 100%;
-    }
-    .col {
-        @include make-xs-column(12);
-        @include make-sm-column(12);
-        @include make-md-column(12); //992px  width:100%
-        @include make-lg-column(12); //1400px width:100%
-        @include gutter(); //gutter 代表左右要留白
-    }
+  .container {
+    max-width: 100%;
+  }
+  .col {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(12); //992px  width:100%
+    @include make-lg-column(12); //1400px width:100%
+    @include gutter(); //gutter 代表左右要留白
+  }
 }
 // 四欄
 .col-3 {
-    .col {
-        @include make-xs-column(12);
-        @include make-sm-column(3); //768px  width:50%
-        @include make-md-column(3); //992px  width:50%
-        @include make-lg-column(3); //1400px width:50%
-        @include gutter(); //gutter 代表左右要留白
-    }
+  .col {
+    @include make-xs-column(12);
+    @include make-sm-column(3); //768px  width:50%
+    @include make-md-column(3); //992px  width:50%
+    @include make-lg-column(3); //1400px width:50%
+    @include gutter(); //gutter 代表左右要留白
+  }
 }
 // 雙欄 6-6
 .col-6 {
-    .container {
-        @include gutter(); //gutter 代表左右要留白
-    }
-    .col {
-        @include make-xs-column(12);
-        @include make-sm-column(6); //768px  width:50%
-        @include make-md-column(6); //992px  width:50%
-        @include make-lg-column(6); //1400px width:50%
-    }
+  .container {
+    @include gutter(); //gutter 代表左右要留白
+  }
+  .col {
+    @include make-xs-column(12);
+    @include make-sm-column(6); //768px  width:50%
+    @include make-md-column(6); //992px  width:50%
+    @include make-lg-column(6); //1400px width:50%
+  }
 }
 // 雙欄 8-4
 .col-8-4 {
-    .news2 {
-        @include make-xs-column(12);
-        @include make-sm-column(8); //768px  width:66.6%
-        @include make-md-column(8); //992px  width:66.6%
-        @include make-lg-column(8); //1400px width:66.6%
-        @include gutter(); //gutter 代表左右要留白
-    }
-    .video {
-        @include make-xs-column(12);
-        @include make-sm-column(4); //768px  width:33.3%
-        @include make-md-column(4); //992px  width:33.3%
-        @include make-lg-column(4); //1400px width:33.3%
-    }
+  .news2 {
+    @include make-xs-column(12);
+    @include make-sm-column(8); //768px  width:66.6%
+    @include make-md-column(8); //992px  width:66.6%
+    @include make-lg-column(8); //1400px width:66.6%
+    @include gutter(); //gutter 代表左右要留白
+  }
+  .video {
+    @include make-xs-column(12);
+    @include make-sm-column(4); //768px  width:33.3%
+    @include make-md-column(4); //992px  width:33.3%
+    @include make-lg-column(4); //1400px width:33.3%
+  }
 }
 // 三欄 3-3
 .col-3-3-3 {
-    .col {
-        @include make-xs-column(12);
-        @include make-sm-column(4); //768px  width:33.3%
-        @include make-md-column(4); //992px  width:33.3%
-        @include make-lg-column(4); //1400px width:33.3%
-    }
-    .imgOuter {
-        @include aspect-ratio(4, 3);
-    }
-    &+.col-3-3-3 {
-        background: $primaryColor;
-    }
+  .col {
+    @include make-xs-column(12);
+    @include make-sm-column(4); //768px  width:33.3%
+    @include make-md-column(4); //992px  width:33.3%
+    @include make-lg-column(4); //1400px width:33.3%
+  }
+  .imgOuter {
+    @include aspect-ratio(4, 3);
+  }
+  & + .col-3-3-3 {
+    background: $primaryColor;
+  }
 }
 // 進階設定，也可以自己寫
 .col-1-2-1 {
-    .col {
-        @include make-xs-column(12);
-        @include make-sm-column(3);
-        @include make-md-column(3);
-        @include make-lg-column(3);
-        @include gutter(); //gutter 代表左右要留白
-        min-height: 250px;
-        &:nth-child(2) {
-            @include make-xs-column(12);
-            @include make-sm-column(6);
-            @include make-md-column(6);
-            @include make-lg-column(6);
-        }
+  .col {
+    @include make-xs-column(12);
+    @include make-sm-column(3);
+    @include make-md-column(3);
+    @include make-lg-column(3);
+    @include gutter(); //gutter 代表左右要留白
+    min-height: 250px;
+    &:nth-child(2) {
+      @include make-xs-column(12);
+      @include make-sm-column(6);
+      @include make-md-column(6);
+      @include make-lg-column(6);
     }
+  }
 }
 // 五欄
 .col-5 {
-    .col {
-        @include make-xs-column(12);
-        @include make-sm-column(2);
-        @include make-md-column(2);
-        @include make-lg-column(2);
-        &:first-child {
-            @include make-xs-column-offset(0);
-            @include make-sm-column-offset(1);
-            @include make-md-column-offset(1);
-            @include make-lg-column-offset(1);
-        }
+  .col {
+    @include make-xs-column(12);
+    @include make-sm-column(2);
+    @include make-md-column(2);
+    @include make-lg-column(2);
+    &:first-child {
+      @include make-xs-column-offset(0);
+      @include make-sm-column-offset(1);
+      @include make-md-column-offset(1);
+      @include make-lg-column-offset(1);
     }
+  }
 }
 //
 //Imagebanner 形象banner
 .Imagebanner_block {
-    overflow: hidden;
-    padding: 0 !important;
-    background-color: $color-green;
-    margin-bottom: 20px;
+  overflow: hidden;
+  padding: 0 !important;
+  background-color: $color-green;
+  margin-bottom: 20px;
+  @include screen('mobile') {
+    margin-top: -50px;
+  }
+  @include screen('xs_mobile') {
+    margin-top: -20px;
+  }
+  .img-container {
+    height: 620px;
+    width: 100%;
+    @include screen('tablet') {
+      height: auto;
+      width: 100%;
+      padding-top: 70px;
+    }
     @include screen('mobile') {
-        margin-top: -50px;
+      padding-top: 0px;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 2px solid #ffc000;
+        display: none;
+      }
+      &:focus {
+        &:before {
+          display: block;
+        }
+      }
+    }
+  }
+  .container {
+    padding: 0 !important;
+    .col-xs-12 {
+      padding-bottom: 0px !important;
+    }
+  }
+  //點點
+  .slick-dots {
+    bottom: 20px !important;
+    @include screen('mobile') {
+      bottom: 5px !important;
+    }
+  }
+  .slick-dots li {
+    width: 45px;
+    height: 4px;
+    margin: 0 5px;
+  }
+  .slick-dots li button {
+    width: 45px;
+    height: 4px;
+  }
+  .slick-dots li button:before {
+    width: 45px;
+    height: 4px;
+    border-radius: 0;
+  }
+  .slick-dots li button:before {
+    background-color: #fff;
+    opacity: 1;
+  }
+  .slick-dots li.slick-active button:before {
+    background-color: $primaryColor;
+  }
+  .slick-dots li button:focus:before {
+    box-shadow: 0 0 0 2px $color-yellow;
+  }
+  //箭頭
+  .slick-prev,
+  .slick-next {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50%;
+    background-size: 30% !important;
+    @include screen('tablet') {
+      top: 60%;
     }
     @include screen('xs_mobile') {
-        margin-top: -20px;
+      width: 50px !important;
+      height: 50px !important;
     }
-    .img-container {
-        height: 620px;
-        width: 100%;
-        @include screen('tablet') {
-            height: auto;
-            width: 100%;
-            padding-top: 70px;
-        }
-        @include screen('mobile') {
-            padding-top: 0px;
-        }
-        a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            img {
-                width: 100%;
-                height: 100%;
-            }
-            &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                border: 2px solid #ffc000;
-                display: none;
-            }
-            &:focus {
-                &:before {
-                    display: block;
-                }
-            }
-        }
+  }
+  .slick-prev {
+    left: 15px;
+    background: url('../vendor/slick/icon_arrow_left4.png') center center no-repeat RGBA(0, 0, 0, 0.3);
+    @include screen('xs_mobile') {
+      left: 10px;
     }
-    .container {
-        padding: 0 !important;
-        .col-xs-12 {
-            padding-bottom: 0px !important;
-        }
+  }
+  .slick-next {
+    right: 15px;
+    background: url('../vendor/slick/icon_arrow_right4.png') center center no-repeat RGBA(0, 0, 0, 0.3);
+    @include screen('xs_mobile') {
+      right: 10px;
     }
-    //點點
-    .slick-dots {
-        bottom: 20px !important;
-        @include screen('mobile') {
-            bottom: 5px !important;
-        }
-    }
-    .slick-dots li {
-        width: 45px;
-        height: 4px;
-        margin: 0 5px;
-    }
-    .slick-dots li button {
-        width: 45px;
-        height: 4px;
-    }
-    .slick-dots li button:before {
-        width: 45px;
-        height: 4px;
-        border-radius: 0;
-    }
-    .slick-dots li button:before {
-        background-color: #fff;
-        opacity: 1;
-    }
-    .slick-dots li.slick-active button:before {
-        background-color: $primaryColor;
-    }
-    .slick-dots li button:focus:before {
-        box-shadow: 0 0 0 2px $color-yellow;
-    }
-    //箭頭
-    .slick-prev,
-    .slick-next {
-        width: 70px !important;
-        height: 70px !important;
-        border-radius: 50%;
-        background-size: 30% !important;
-        @include screen('tablet') {
-            top: 60%;
-        }
-        @include screen('xs_mobile') {
-            width: 50px !important;
-            height: 50px !important;
-        }
-    }
-    .slick-prev {
-        left: 15px;
-        background: url('../vendor/slick/icon_arrow_left4.png') center center no-repeat RGBA(0, 0, 0, .3);
-        @include screen('xs_mobile') {
-            left: 10px;
-        }
-    }
-    .slick-next {
-        right: 15px;
-        background: url('../vendor/slick/icon_arrow_right4.png') center center no-repeat RGBA(0, 0, 0, .3);
-        @include screen('xs_mobile') {
-            right: 10px;
-        }
-    }
+  }
 }
 .themewrapper {
-    .Imagebanner_block {
-        margin-bottom: 20px;
-        background-color: #eaf1ee;
-        @include screen('mobile') {
-            margin-top: -60px;
-        }
-        @include screen('xs_mobile') {
-            margin-top: -60px;
-        }
-        .img-container {
-            height: 480px;
-            @include screen('tablet') {
-                height: auto;
-                width: 100%;
-                padding-top: 70px;
-            }
-            @include screen('mobile') {
-                padding-top: 0px;
-            }
-        }
+  .Imagebanner_block {
+    margin-bottom: 20px;
+    background-color: #eaf1ee;
+    @include screen('mobile') {
+      margin-top: -60px;
     }
+    @include screen('xs_mobile') {
+      margin-top: -60px;
+    }
+    .img-container {
+      height: 480px;
+      @include screen('tablet') {
+        height: auto;
+        width: 100%;
+        padding-top: 70px;
+      }
+      @include screen('mobile') {
+        padding-top: 0px;
+      }
+    }
+  }
 }
 //
 .themewrapper {
-    .main {
-        .Imagebanner_block {
-            .img-container {
-                @include screen('tablet') {
-                    padding-top: 0px;
-                }
-            }
+  .main {
+    .Imagebanner_block {
+      .img-container {
+        @include screen('tablet') {
+          padding-top: 0px;
         }
+      }
     }
+  }
 }
 //跑馬燈
 .marquee {
-    height: 45px;
+  height: 45px;
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  margin: 2em 4em;
+  text-align: left;
+  padding: 0 3em 0 2em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dadada;
+  text-decoration: none;
+  @include screen('tablet') {
+    margin: 1.5em 0em;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .slick-prev {
+    width: 10px;
+    height: 10px;
+    transform: rotate(90deg);
+    right: 0px !important;
+    top: 1px !important;
+    left: auto;
+    opacity: 0.5;
+    background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat center center;
+    background-size: 16px;
+    width: 20px !important;
+    height: 20px !important;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+    &:before {
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
+  .slick-next {
+    width: 10px;
+    height: 10px;
+    transform: rotate(-90deg);
+    right: 0px !important;
+    top: 22px !important;
+    left: auto;
+    opacity: 0.5;
+    width: 20px !important;
+    height: 20px !important;
+    background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat center center;
+    background-size: 16px;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+    &:before {
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
+  > div {
+    padding: 0;
+    margin: 0;
+  }
+  a {
     display: block;
+    line-height: 40px;
+    margin-right: 3em;
+    font-weight: bold;
     overflow: hidden;
-    background: #FFF;
-    margin: 2em 4em;
-    text-align: left;
-    padding: 0 3em 0 2em;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-bottom: 1px solid #dadada;
-    text-decoration: none;
-    @include screen('tablet') {
-        margin: 1.5em 0em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $color-word;
+    span {
+      color: $primaryColor;
+      margin-right: 15px;
     }
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none
+    &:hover {
+      color: $primaryColor;
     }
-    .slick-prev {
-        width: 10px;
-        height: 10px;
-        transform: rotate(90deg);
-        right: 0px !important;
-        top: 1px !important;
-        left: auto;
-        opacity: .5;
-        background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat center center;
-        background-size: 16px;
-        width: 20px !important;
-        height: 20px !important;
-        box-shadow: none;
-        &:hover,
-        &:focus {
-            opacity: 1
-        }
-        &:before {
-            width: 10px !important;
-            height: 10px !important
-        }
-    }
-    .slick-next {
-        width: 10px;
-        height: 10px;
-        transform: rotate(-90deg);
-        right: 0px !important;
-        top: 22px !important;
-        left: auto;
-        opacity: .5;
-        width: 20px !important;
-        height: 20px !important;
-        background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat center center;
-        background-size: 16px;
-        box-shadow: none;
-        &:hover,
-        &:focus {
-            opacity: 1
-        }
-        &:before {
-            width: 10px !important;
-            height: 10px !important
-        }
-    }
-    >div {
-        padding: 0;
-        margin: 0
-    }
-    a {
-        display: block;
-        line-height: 40px;
-        margin-right: 3em;
-        font-weight: bold;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: $color-word;
-        span {
-            color: $primaryColor;
-            margin-right: 15px;
-        }
-        &:hover {
-            color: $primaryColor;
-        }
-    }
+  }
 }
 //大圖輪播
 .bigbanner_slider {
-    margin: 0;
-    .img-container {
-        height: 490px !important;
-        @include screen('notebook') {
-            height: 450px !important;
-        }
-        @include screen('tablet') {
-            height: 400px !important;
-        }
-        @media(max-width: 860px) {
-            height: 380px !important;
-        }
-        @include screen('mobile') {
-            height: 350px !important;
-        }
-        @media(max-width: 700px) {
-            height: 300px !important;
-        }
-        @media(max-width: 600px) {
-            height: 250px !important;
-        }
-        @media(max-width: 500px) {
-            height: 220px !important;
-        }
-        @media(max-width: 400px) {
-            height: 180px !important;
-        }
-        @media(max-width: 350px) {
-            height: 150px !important;
-        }
-        a {
-            display: block;
-            &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                border: 2px solid #ffc000;
-                display: none;
-            }
-            &:focus {
-                &:before {
-                    display: block;
-                }
-            }
-        }
+  margin: 0;
+  .img-container {
+    height: 490px !important;
+    @include screen('notebook') {
+      height: 450px !important;
     }
-    .img-container a .caption {
-        text-align: left;
+    @include screen('tablet') {
+      height: 400px !important;
+    }
+    @media (max-width: 860px) {
+      height: 380px !important;
     }
     @include screen('mobile') {
-        .img-container a .caption {
-            height: 3em;
-        }
+      height: 350px !important;
     }
-    //箭頭
-    .slick-prev {
-        background: url('../vendor/slick/icon_arrow_left2.png') center center no-repeat RGBA(0, 0, 0, .5);
-        width: 55px !important;
-        height: 55px !important;
-        border-radius: 50%;
-        left: 15px;
-        &:hover,
-        &:focus {
-            background-color: RGBA(0, 0, 0, .8);
-        }
+    @media (max-width: 700px) {
+      height: 300px !important;
     }
-    .slick-next {
-        background: url('../vendor/slick/icon_arrow_right2.png') center center no-repeat RGBA(0, 0, 0, .5);
-        width: 55px !important;
-        height: 55px !important;
-        border-radius: 50%;
-        right: 15px;
-        @include screen('xs_mobile') {
-            width: 50px !important;
-            height: 50px !important;
-        }
-        &:hover,
-        &:focus {
-            background-color: RGBA(0, 0, 0, .8);
-        }
+    @media (max-width: 600px) {
+      height: 250px !important;
     }
-    //點點
-    .slick-dots {
-        bottom: -30px;
+    @media (max-width: 500px) {
+      height: 220px !important;
+    }
+    @media (max-width: 400px) {
+      height: 180px !important;
+    }
+    @media (max-width: 350px) {
+      height: 150px !important;
+    }
+    a {
+      display: block;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
         right: 0;
-        width: auto;
-        padding: 0;
+        border: 2px solid #ffc000;
+        display: none;
+      }
+      &:focus {
+        &:before {
+          display: block;
+        }
+      }
     }
-    .slick-dots li {
-        width: 10px;
-        height: 10px;
-        margin: 0 5px;
+  }
+  .img-container a .caption {
+    text-align: left;
+  }
+  @include screen('mobile') {
+    .img-container a .caption {
+      height: 3em;
     }
-    .slick-dots li button:before {
-        width: 10px;
-        height: 10px;
+  }
+  //箭頭
+  .slick-prev {
+    background: url('../vendor/slick/icon_arrow_left2.png') center center no-repeat RGBA(0, 0, 0, 0.5);
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 50%;
+    left: 15px;
+    &:hover,
+    &:focus {
+      background-color: RGBA(0, 0, 0, 0.8);
     }
-    .slick-dots li.slick-active button:before {
-        background-color: #000;
+  }
+  .slick-next {
+    background: url('../vendor/slick/icon_arrow_right2.png') center center no-repeat RGBA(0, 0, 0, 0.5);
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 50%;
+    right: 15px;
+    @include screen('xs_mobile') {
+      width: 50px !important;
+      height: 50px !important;
     }
+    &:hover,
+    &:focus {
+      background-color: RGBA(0, 0, 0, 0.8);
+    }
+  }
+  //點點
+  .slick-dots {
+    bottom: -30px;
+    right: 0;
+    width: auto;
+    padding: 0;
+  }
+  .slick-dots li {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+  .slick-dots li button:before {
+    width: 10px;
+    height: 10px;
+  }
+  .slick-dots li.slick-active button:before {
+    background-color: #000;
+  }
 }
 //最新消息news
 .news {
-    h2 {
-        @extend .block01_h2;
-    }
-    ul {
-        margin: 0 0 15px;
-        padding: 0;
-        li {
-            list-style-type: none;
-            position: relative;
-            border-bottom: 1px solid #dededb;
-            a {
-                width: 75%;
-                display: inline-block;
-                background-image: url('../images/icon_list01.png');
-                background-position: 8px 20px;
-                background-repeat: no-repeat;
-                color: $color-word;
-                @include text-overflow;
-                padding: 13px 0 2px 25px;
-                @include screen('notebook') {
-                    width: 70%;
-                }
-                @include screen('tablet'){
-                    width: 65%;
-                }
-                @media (max-width: 500px) {
-                    width: 60%;
-                }
-                &:hover {
-                    color: $aHover;
-                }
-            }
-            span {
-                color: #666;
-                display: inline-block;
-                position: absolute;
-                top: 10px;
-                right: 5px;
-            }
+  h2 {
+    @extend .block01_h2;
+  }
+  ul {
+    margin: 0 0 15px;
+    padding: 0;
+    li {
+      list-style-type: none;
+      position: relative;
+      border-bottom: 1px solid #dededb;
+      a {
+        width: 75%;
+        display: inline-block;
+        background-image: url('../images/icon_list01.png');
+        background-position: 8px 20px;
+        background-repeat: no-repeat;
+        color: $color-word;
+        @include text-overflow;
+        padding: 13px 0 2px 25px;
+        @include screen('notebook') {
+          width: 70%;
         }
+        @include screen('tablet') {
+          width: 65%;
+        }
+        @media (max-width: 500px) {
+          width: 60%;
+        }
+        &:hover {
+          color: $aHover;
+        }
+      }
+      span {
+        color: #666;
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        right: 5px;
+      }
     }
+  }
 }
 //文字區塊 textblock
 .textblock {
-    background-color: $primaryColor;
+  background-color: $primaryColor;
+  color: #fff;
+  padding: 20px 40px;
+  height: 380px;
+  position: relative;
+  @include box-sizing;
+  @media (max-width: 380px) {
+    padding: 20px;
+  }
+  h2 {
     color: #fff;
-    padding: 20px 40px;
-    height: 380px;
-    position: relative;
-    @include box-sizing;
-    @media(max-width: 380px) {
-        padding: 20px;
+    font-size: 1.5em;
+    padding: 0px 10px 20px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #fff;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    height: 10.8em;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-align: left;
+    margin: 0 0px 10px;
+  }
+  .more {
+    a {
+      background: $primaryColor;
+      color: #fff;
+      border: 1px solid #fff;
+      &:hover {
+        background: #fff;
+        color: $aHover;
+        border: 1px solid $primaryColor;
+      }
     }
-    h2 {
-        color: #fff;
-        font-size: 1.5em;
-        padding: 0px 10px 20px;
-        margin: 0 0 20px;
-        text-align: center;
-        font-weight: 400;
-        letter-spacing: .05em;
-        border-bottom: 1px solid #fff;
-    }
-    p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.8em;
-        height: 10.8em;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        text-align: left;
-        margin: 0 0px 10px;
-    }
-    .more {
-        a {
-            background: $primaryColor;
-            color: #fff;
-            border: 1px solid #fff;
-            &:hover {
-                background: #fff;
-                color: $aHover;
-                border: 1px solid $primaryColor;
-            }
-        }
-    }
+  }
 }
 //文字連結textlink1
 .textlink1 {
-    @include screen('mobile') {
-        margin-bottom: 25px;
-    }
-    h2 {
-        @extend .block01_h2;
-    }
-    ul {
-        margin: 0 0 15px;
-        padding: 0;
-        li {
-            list-style-type: none;
-            position: relative;
-            border-bottom: 1px solid #dededb;
-            a {
-                display: block;
-                background-image: url('../images/icon_list01.png');
-                background-position: 8px 15px;
-                background-repeat: no-repeat;
-                color: $color-word;
-                @include text-overflow;
-                padding: 10px 0 10px 25px;
-                &:hover {
-                    color: $aHover;
-                }
-            }
+  @include screen('mobile') {
+    margin-bottom: 25px;
+  }
+  h2 {
+    @extend .block01_h2;
+  }
+  ul {
+    margin: 0 0 15px;
+    padding: 0;
+    li {
+      list-style-type: none;
+      position: relative;
+      border-bottom: 1px solid #dededb;
+      a {
+        display: block;
+        background-image: url('../images/icon_list01.png');
+        background-position: 8px 15px;
+        background-repeat: no-repeat;
+        color: $color-word;
+        @include text-overflow;
+        padding: 10px 0 10px 25px;
+        &:hover {
+          color: $aHover;
         }
+      }
     }
+  }
 }
 //文字連結textlink2
 .textlink2 {
-    @include screen('mobile') {
-        margin-bottom: 25px;
-    }
-    h2 {
-        @extend .block01_h2;
-    }
-    ul {
-        margin: 0 0 15px;
-        padding: 0;
-        overflow: hidden;
-        li {
-            list-style-type: none;
-            position: relative;
-            border-bottom: 1px solid #dededb;
-            width: 48%;
-            margin-right: 25px;
-            float: left;
-            &:nth-child(2n) {
-                margin-right: 0;
-            }
-            @include screen('tablet') {
-                width: 47%;
-            }
-            @include screen('xs_mobile') {
-                width: 100%;
-                float: none;
-            }
-            a {
-                display: block;
-                background-image: url('../images/icon_list01.png');
-                background-position: 8px 15px;
-                background-repeat: no-repeat;
-                color: $color-word;
-                @include text-overflow;
-                padding: 10px 0 10px 25px;
-                &:hover {
-                    color: $aHover;
-                }
-            }
-        }
-    }
-    .more {
-        clear: both;
+  @include screen('mobile') {
+    margin-bottom: 25px;
+  }
+  h2 {
+    @extend .block01_h2;
+  }
+  ul {
+    margin: 0 0 15px;
+    padding: 0;
+    overflow: hidden;
+    li {
+      list-style-type: none;
+      position: relative;
+      border-bottom: 1px solid #dededb;
+      width: 48%;
+      margin-right: 25px;
+      float: left;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+      @include screen('tablet') {
+        width: 47%;
+      }
+      @include screen('xs_mobile') {
+        width: 100%;
         float: none;
+      }
+      a {
+        display: block;
+        background-image: url('../images/icon_list01.png');
+        background-position: 8px 15px;
+        background-repeat: no-repeat;
+        color: $color-word;
+        @include text-overflow;
+        padding: 10px 0 10px 25px;
+        &:hover {
+          color: $aHover;
+        }
+      }
     }
+  }
+  .more {
+    clear: both;
+    float: none;
+  }
 }
 //推薦資訊
 .recommendbg {
-    position: relative;
-    // &:before {
-    //     content: '';
-    //     width: 0;
-    //     height: 0;
-    //     border-style: solid;
-    //     border-width: 200px 0 200px 4000px;
-    //     border-color: transparent transparent transparent #efeff3;
-    //     position: absolute;
-    //     top: 0;
-    // }
+  position: relative;
+  // &:before {
+  //     content: '';
+  //     width: 0;
+  //     height: 0;
+  //     border-style: solid;
+  //     border-width: 200px 0 200px 4000px;
+  //     border-color: transparent transparent transparent #efeff3;
+  //     position: absolute;
+  //     top: 0;
+  // }
 }
 .recommend {
-    text-align: center;
-    h2 {
-        @extend .block02_h2;
-    }
-    .recommend_link {
-        margin-bottom: 40px;
-        div {
-            text-align: center;
-            a {
-                display: block;
-                text-align: center;
-                font-size: 1.25em;
-                color: #333;
-                padding: 0;
-                span {
-                    width: 130px;
-                    height: 130px;
-                    border-radius: 50%;
-                    display: block;
-                    background-color: $primaryColor;
-                    text-align: center;
-                    position: relative;
-                    margin: 0 auto 20px;
-                    transition: .5s;
-                    img {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        right: 0;
-                        max-width: 100%;
-                        max-height: 100%;
-                        margin: auto;
-                    }
-                }
-                &:hover {
-                    color: #219e62;
-                    span {
-                        // transform: scale(1.1, 1.1);
-                        background-color: #219e62;
-                    }
-                }
-            }
-        }
-        .slick-next,
-        .slick-prev {
-            background-color: transparent;
-        }
-    }
-}
-//主題宣導網站 themewebsite
-.themewebsite {
-    text-align: center;
-    h2 {
-        @extend .block02_h2;
-    }
-    ul {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        @include screen('xs_mobile') {
-            margin-bottom: 20px;
-        }
-        li {
-            width: 23%;
-            margin: 0 1% 20px;
-            list-style-type: none;
-            float: left;
-            background-color: $primaryColor;
-            background-image: url('../images/themewebsite_icon.png');
-            background-repeat: no-repeat;
-            background-position: right center;
-            transition: .5s;
-            @include screen('notebook') {
-                width: 31.5%;
-            }
-            @media(max-width: 800px) {
-                width: 48%;
-            }
-            @include screen('xs_mobile') {
-                width: 100%;
-                margin: 0 0 10px;
-            }
-            &:hover {
-                background-color: #219e62;
-            }
-            a {
-                display: table-cell;
-                padding: 0px 60px 0px 30px;
-                color: #fff;
-                text-align: left;
-                vertical-align: middle;
-                height: 100px;
-                @include screen('xs_mobile') {
-                    height: 70px;
-                }
-            }
-            @media(min-width: 1200px) {
-                &:nth-child(4n) {
-                    margin-right: 0;
-                }
-            }
-            @media(max-width: 1199px)and (min-width: 801px) {
-                &:nth-child(3n) {
-                    margin-right: 0;
-                }
-            }
-            @media(max-width: 800px)and (min-width: 576px) {
-                &:nth-child(2n) {
-                    margin-right: 0;
-                }
-            }
-            @include screen('xs_mobile') {
-                margin-right: 0;
-            }
-        }
-    }
-}
-//knowledge_base 知識庫
-.knowledge_base {
-    position: relative;
-    padding: 0;
-    overflow: hidden;
-    z-index: 9;
-    &:after {
-        content: '';
-        background-image: url('../images/knowledge_pic01.jpg');
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        width: 90%;
-        height: 335px;
-        border: 5px solid $primaryColor;
+  text-align: center;
+  h2 {
+    @extend .block02_h2;
+  }
+  .recommend_link {
+    margin-bottom: 40px;
+    div {
+      text-align: center;
+      a {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 9;
-        background-size: cover;
-        @include screen('tablet') {
-            width: 98%;
-        }
-        @include screen('xs_mobile') {
-            width: 97%;
-        }
-    }
-    &:before {
-        content: '';
-        width: 3px;
-        height: 125px;
-        background-color: $primaryColor;
-        position: absolute;
-        top: 280px;
-        left: 70px;
-        transform: rotate(30deg);
-        z-index: 99;
-        @include screen('tablet') {
-            left: 40px;
-        }
-    }
-    h2 {
-        font-size: 3.5em;
-        color: #fff;
-        width: 170px;
-        font-weight: 500;
-        text-shadow: 0 0 20px #000;
-        position: relative;
-        z-index: 99;
-        margin: 40px 0 0 40px;
+        text-align: center;
+        font-size: 1.25em;
+        color: #333;
         padding: 0;
-        float: left;
-        line-height: 1.5em;
         span {
-            letter-spacing: .15em;
-            margin-left: 0px;
-            @include screen('tablet') {
-                margin-left: 10px;
-                letter-spacing: .1em;
-            }
-            @media(max-width: 350px) {
-                display: block;
-                margin-left: 0px;
-            }
-        }
-        @include screen('tablet') {
-            float: none;
-            clear: both;
-            width: auto;
-            margin: 30px 0 0 40px;
-        }
-        @include screen('xs_mobile') {
-            font-size: 3.5em;
-        }
-    }
-    .knowledgelist {
-        height: 240px;
-        background-color: rgba(100, 163, 33, .9);
-        padding: 40px 40px 50px;
-        z-index: 99;
-        position: relative;
-        margin: 50px 0 100px 220px;
-        @include box-sizing;
-        @include screen('tablet') {
-            margin: 50px 40px 100px;
-        }
-        @media(max-width: 900px) {
-            height: auto;
-            margin: 50px 40px 50px;
-        }
-        @include screen('xs_mobile') {
-            padding: 20px;
-        }
-        ul {
-            margin: 0;
-            padding: 0;
-            li {
-                float: left;
-                width: 20%;
-                list-style-type: none;
-                background-image: url('../images/knowledge_line.png');
-                background-position: left center;
-                background-repeat: no-repeat;
-                font-size: 1.5em;
-                &:first-child {
-                    background-image: none;
-                }
-                @media(max-width: 900px) {
-                    float: none;
-                    width: 100%;
-                    background-image: none;
-                }
-                a {
-                    display: block;
-                    color: #fff;
-                    padding: 30px 20px;
-                    @include box-sizing;
-                    height: 150px;
-                    background-image: url('../images/knowledge_icon.png');
-                    background-position: center bottom;
-                    background-repeat: no-repeat;
-                    line-height: 1.3em;
-                    &:hover {
-                        color: $color-yellow;
-                    }
-                    @include screen('notebook') {
-                        padding: 15px 20px;
-                    }
-                    @include screen('tablet') {
-                        height: 170px;
-                    }
-                    @media(max-width: 900px) {
-                        padding: 10px 20px 10px 30px;
-                        height: auto;
-                        background-position: left 18px;
-                    }
-                }
-            }
-        }
-    }
-}
-//關於我們 aboutus
-.aboutus {
-    border: 5px solid $primaryColor;
-    background-color: #fff;
-    padding: 25px;
-    margin: 1.5em 0;
-    &:before {
-        content: '';
-        width: 3px;
-        height: 125px;
-        background-color: $primaryColor;
-        position: absolute;
-        bottom: 0px;
-        left: 70px;
-        transform: rotate(30deg);
-        z-index: 99;
-        @include screen('tablet') {
-            left: 40px;
-        }
-    }
-    h2 {
-        @extend .block03_h2;
-    }
-    .img-container {
-        height: 220px;
-        margin: 0 0 20px;
-        position: relative;
-        img {
+          width: 130px;
+          height: 130px;
+          border-radius: 50%;
+          display: block;
+          background-color: $primaryColor;
+          text-align: center;
+          position: relative;
+          margin: 0 auto 20px;
+          transition: 0.5s;
+          img {
             position: absolute;
             top: 0;
-            right: 0;
-            bottom: 0;
             left: 0;
+            bottom: 0;
+            right: 0;
             max-width: 100%;
             max-height: 100%;
             margin: auto;
-            width: auto;
-            height: auto;
+          }
         }
+        &:hover {
+          color: #219e62;
+          span {
+            // transform: scale(1.1, 1.1);
+            background-color: #219e62;
+          }
+        }
+      }
     }
-    h3 {
-        color: $primaryColor;
-        margin: 0 0 20px;
+    .slick-next,
+    .slick-prev {
+      background-color: transparent;
     }
-    p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.8em;
-        height: 7.2em;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
+  }
+}
+//主題宣導網站 themewebsite
+.themewebsite {
+  text-align: center;
+  h2 {
+    @extend .block02_h2;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    @include screen('xs_mobile') {
+      margin-bottom: 20px;
+    }
+    li {
+      width: 23%;
+      margin: 0 1% 20px;
+      list-style-type: none;
+      float: left;
+      background-color: $primaryColor;
+      background-image: url('../images/themewebsite_icon.png');
+      background-repeat: no-repeat;
+      background-position: right center;
+      transition: 0.5s;
+      @include screen('notebook') {
+        width: 31.5%;
+      }
+      @media (max-width: 800px) {
+        width: 48%;
+      }
+      @include screen('xs_mobile') {
+        width: 100%;
+        margin: 0 0 10px;
+      }
+      &:hover {
+        background-color: #219e62;
+      }
+      a {
+        display: table-cell;
+        padding: 0px 60px 0px 30px;
+        color: #fff;
         text-align: left;
-        margin: 0 0px 20px;
+        vertical-align: middle;
+        height: 100px;
+        @include screen('xs_mobile') {
+          height: 70px;
+        }
+      }
+      @media (min-width: 1200px) {
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 1199px) and (min-width: 801px) {
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 800px) and (min-width: 576px) {
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      @include screen('xs_mobile') {
+        margin-right: 0;
+      }
     }
+  }
+}
+//knowledge_base 知識庫
+.knowledge_base {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  z-index: 9;
+  &:after {
+    content: '';
+    background-image: url('../images/knowledge_pic01.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 335px;
+    border: 5px solid $primaryColor;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-size: cover;
+    @include screen('tablet') {
+      width: 98%;
+    }
+    @include screen('xs_mobile') {
+      width: 97%;
+    }
+  }
+  &:before {
+    content: '';
+    width: 3px;
+    height: 125px;
+    background-color: $primaryColor;
+    position: absolute;
+    top: 280px;
+    left: 70px;
+    transform: rotate(30deg);
+    z-index: 99;
+    @include screen('tablet') {
+      left: 40px;
+    }
+  }
+  h2 {
+    font-size: 3.5em;
+    color: #fff;
+    width: 170px;
+    font-weight: 500;
+    text-shadow: 0 0 20px #000;
+    position: relative;
+    z-index: 99;
+    margin: 40px 0 0 40px;
+    padding: 0;
+    float: left;
+    line-height: 1.5em;
+    span {
+      letter-spacing: 0.15em;
+      margin-left: 0px;
+      @include screen('tablet') {
+        margin-left: 10px;
+        letter-spacing: 0.1em;
+      }
+      @media (max-width: 350px) {
+        display: block;
+        margin-left: 0px;
+      }
+    }
+    @include screen('tablet') {
+      float: none;
+      clear: both;
+      width: auto;
+      margin: 30px 0 0 40px;
+    }
+    @include screen('xs_mobile') {
+      font-size: 3.5em;
+    }
+  }
+  .knowledgelist {
+    height: 240px;
+    background-color: rgba(100, 163, 33, 0.9);
+    padding: 40px 40px 50px;
+    z-index: 99;
+    position: relative;
+    margin: 50px 0 100px 220px;
+    @include box-sizing;
+    @include screen('tablet') {
+      margin: 50px 40px 100px;
+    }
+    @media (max-width: 900px) {
+      height: auto;
+      margin: 50px 40px 50px;
+    }
+    @include screen('xs_mobile') {
+      padding: 20px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        width: 20%;
+        list-style-type: none;
+        background-image: url('../images/knowledge_line.png');
+        background-position: left center;
+        background-repeat: no-repeat;
+        font-size: 1.5em;
+        &:first-child {
+          background-image: none;
+        }
+        @media (max-width: 900px) {
+          float: none;
+          width: 100%;
+          background-image: none;
+        }
+        a {
+          display: block;
+          color: #fff;
+          padding: 30px 20px;
+          @include box-sizing;
+          height: 150px;
+          background-image: url('../images/knowledge_icon.png');
+          background-position: center bottom;
+          background-repeat: no-repeat;
+          line-height: 1.3em;
+          &:hover {
+            color: $color-yellow;
+          }
+          @include screen('notebook') {
+            padding: 15px 20px;
+          }
+          @include screen('tablet') {
+            height: 170px;
+          }
+          @media (max-width: 900px) {
+            padding: 10px 20px 10px 30px;
+            height: auto;
+            background-position: left 18px;
+          }
+        }
+      }
+    }
+  }
+}
+//關於我們 aboutus
+.aboutus {
+  border: 5px solid $primaryColor;
+  background-color: #fff;
+  padding: 25px;
+  margin: 1.5em 0;
+  &:before {
+    content: '';
+    width: 3px;
+    height: 125px;
+    background-color: $primaryColor;
+    position: absolute;
+    bottom: 0px;
+    left: 70px;
+    transform: rotate(30deg);
+    z-index: 99;
+    @include screen('tablet') {
+      left: 40px;
+    }
+  }
+  h2 {
+    @extend .block03_h2;
+  }
+  .img-container {
+    height: 220px;
+    margin: 0 0 20px;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      width: auto;
+      height: auto;
+    }
+  }
+  h3 {
+    color: $primaryColor;
+    margin: 0 0 20px;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    height: 7.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: left;
+    margin: 0 0px 20px;
+  }
 }
 //關於我們 aboutus2
 .aboutus2 {
-    border: 5px solid $primaryColor;
-    background-color: #fff;
-    padding: 25px;
-    margin: 1.5em 0;
-    &:before {
-        content: '';
-        width: 3px;
-        height: 125px;
-        background-color: $primaryColor;
-        position: absolute;
-        bottom: 0px;
-        left: 70px;
-        transform: rotate(30deg);
-        z-index: 99;
-        @include screen('tablet') {
-            left: 40px;
-        }
+  border: 5px solid $primaryColor;
+  background-color: #fff;
+  padding: 25px;
+  margin: 1.5em 0;
+  &:before {
+    content: '';
+    width: 3px;
+    height: 125px;
+    background-color: $primaryColor;
+    position: absolute;
+    bottom: 0px;
+    left: 70px;
+    transform: rotate(30deg);
+    z-index: 99;
+    @include screen('tablet') {
+      left: 40px;
     }
-    h2 {
-        @extend .block03_h2;
+  }
+  h2 {
+    @extend .block03_h2;
+  }
+  .image {
+    float: left;
+    margin-right: 30px;
+    width: 300px;
+    img {
+      width: 300px;
     }
-    .image {
-        float: left;
-        margin-right: 30px;
-        width: 300px;
-        img {
-            width: 300px;
-        }
-        @media(max-width: 700px) {
-            float: none;
-            clear: both;
-            margin: 0 0 20px;
-            width: 100%;
-            img {
-                width: 100%;
-            }
-        }
+    @media (max-width: 700px) {
+      float: none;
+      clear: both;
+      margin: 0 0 20px;
+      width: 100%;
+      img {
+        width: 100%;
+      }
     }
-    h3 {
-        color: $primaryColor;
-        margin: 0 0 20px;
+  }
+  h3 {
+    color: $primaryColor;
+    margin: 0 0 20px;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    height: 9em;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-align: left;
+    margin: 0 0 15px;
+  }
+  .detailed {
+    float: right;
+    margin-bottom: 15px;
+    a {
+      color: $aHover;
+      background-color: lighten($primaryColor, 48);
+      width: auto;
+      text-align: center;
+      padding: 0.3em 2em;
+      border-radius: 50px;
+      border: none;
+      transition: 0.5s;
+      &:hover {
+        background-color: $aHover;
+        color: #fff;
+      }
     }
-    p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.8em;
-        height: 9em;
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        -webkit-box-orient: vertical;
-        text-align: left;
-        margin: 0 0 15px;
-    }
-    .detailed {
-        float: right;
-        margin-bottom: 15px;
-        a {
-            color: $aHover;
-            background-color: lighten($primaryColor, 48);
-            width: auto;
-            text-align: center;
-            padding: .3em 2em;
-            border-radius: 50px;
-            border: none;
-            transition: .5s;
-            &:hover {
-                background-color: $aHover;
-                color: #fff;
-            }
-        }
-    }
+  }
 }
 //activity_photo 活動剪影-單篇
 .activity_photo {
-    border: 5px solid $primaryColor;
-    background-color: #fff;
-    padding: 25px;
-    margin: 1.5em 0;
-    h2 {
-        @extend .block03_h2;
-    }
-    .activity_slider,
-    .activity_slider2,
-    .activity_slider3 {
-        .activity_content {
-            a {
-                p {
-                    color: $color-word;
-                }
-                &:hover,
-                &:focus {
-                    p {
-                        color: $aHover;
-                    }
-                }
-            }
-        }
-        .img-container {
-            height: 220px;
-            position: relative;
-            margin: 0 0 20px;
-            overflow: hidden;
-            img {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                max-width: 100%;
-                max-height: 100%;
-                margin: auto;
-                width: auto;
-                height: auto;
-            }
-            h3 {
-                position: absolute;
-                width: 100%;
-                bottom: 0;
-                background-color: rgba(0, 0, 0, .6);
-                color: #fff;
-                font-size: 1em;
-                padding: 8px 20px;
-                margin: 0;
-                @include text-overflow;
-                @include box-sizing;
-            }
-        }
-        .date {
-            color: $primaryColor;
-            margin: 0 30px 20px;
-            font-size: 1.125em;
-        }
+  border: 5px solid $primaryColor;
+  background-color: #fff;
+  padding: 25px;
+  margin: 1.5em 0;
+  h2 {
+    @extend .block03_h2;
+  }
+  .activity_slider,
+  .activity_slider2,
+  .activity_slider3 {
+    .activity_content {
+      a {
         p {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 1.8em;
-            height: 7.2em;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            text-align: left;
-            margin: 0 30px 20px;
+          color: $color-word;
         }
-        .slick-next {
-            right: -29px;
-            top: 59%;
-            background: url('../vendor/slick/icon_arrow_right2.png') center center no-repeat RGBA(0, 0, 0, .2);
+        &:hover,
+        &:focus {
+          p {
+            color: $aHover;
+          }
         }
-        .slick-prev {
-            left: -29px;
-            top: 59%;
-            background: url('../vendor/slick/icon_arrow_left2.png') center center no-repeat RGBA(0, 0, 0, .2);
-        }
+      }
     }
-    .activity_slider2 .activity_content,
-    .activity_slider3 .activity_content {
-        padding: 0 10px;
+    .img-container {
+      height: 220px;
+      position: relative;
+      margin: 0 0 20px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        width: auto;
+        height: auto;
+      }
+      h3 {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 1em;
+        padding: 8px 20px;
+        margin: 0;
+        @include text-overflow;
+        @include box-sizing;
+      }
     }
+    .date {
+      color: $primaryColor;
+      margin: 0 30px 20px;
+      font-size: 1.125em;
+    }
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.8em;
+      height: 7.2em;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      text-align: left;
+      margin: 0 30px 20px;
+    }
+    .slick-next {
+      right: -29px;
+      top: 59%;
+      background: url('../vendor/slick/icon_arrow_right2.png') center center no-repeat RGBA(0, 0, 0, 0.2);
+    }
+    .slick-prev {
+      left: -29px;
+      top: 59%;
+      background: url('../vendor/slick/icon_arrow_left2.png') center center no-repeat RGBA(0, 0, 0, 0.2);
+    }
+  }
+  .activity_slider2 .activity_content,
+  .activity_slider3 .activity_content {
+    padding: 0 10px;
+  }
 }
 //accordion環境清潔小撇步
 .accordionblock {
-    text-align: center;
-    h2 {
-        @extend .block02_h2;
-    }
-    .accordion {
-        margin-bottom: 25px;
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            li {
-                text-align: left;
-                display: block;
-                border-bottom: 1px solid #FFF;
-                a {
-                    display: block;
-                    background: url('../images/icon_plus.png') no-repeat right 22px $primaryColor;
-                    padding: 1em;
-                    color: #FFF;
-                    position: relative;
-                    font-size: 1.25em;
-                    &:hover,
-                    &:focus {
-                        background: url('../images/icon_plus.png') no-repeat right 22px $secondaryColor;
-                        box-shadow: none
-                    }
-                    &.active {
-                        background: url('../images/icon_minus.png') no-repeat right 22px $secondaryColor;
-                        &:hover,
-                        &:focus {
-                            background: url('../images/icon_minus.png') no-repeat right 22px $secondaryColor;
-                            box-shadow: none
-                        }
-                    }
-                }
-                .accordion-content {
-                    position: relative;
-                    padding: 1em 1em 2em 1em;
-                    background: #FFF;
-                    line-height: 1.65em;
-                    .image {
-                        float: left;
-                        margin: 0 30px 0 0;
-                        img {
-                            width: 300px;
-                        }
-                        @media(max-width: 700px) {
-                            float: none;
-                            clear: both;
-                            margin: 0;
-                            img {
-                                width: 100%;
-                            }
-                        }
-                    }
-                    ul {
-                        overflow: hidden;
-                        li {
-                            a {
-                                background-image: url('../images/icon_list01.png');
-                                background-position: left 15px;
-                                background-color: transparent;
-                                background-repeat: no-repeat;
-                                font-size: 1em;
-                                padding: 5px 5px 5px 20px;
-                                color: $color-word;
-                                &:hover,
-                                &:focus {
-                                    background-image: url('../images/icon_list01.png');
-                                    background-position: left 14px;
-                                    background-color: transparent;
-                                    background-repeat: no-repeat;
-                                    color: $primaryColor;
-                                }
-                            }
-                        }
-                    }
-                }
+  text-align: center;
+  h2 {
+    @extend .block02_h2;
+  }
+  .accordion {
+    margin-bottom: 25px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        text-align: left;
+        display: block;
+        border-bottom: 1px solid #fff;
+        a {
+          display: block;
+          background: url('../images/icon_plus.png') no-repeat right 22px $primaryColor;
+          padding: 1em;
+          color: #fff;
+          position: relative;
+          font-size: 1.25em;
+          &:hover,
+          &:focus {
+            background: url('../images/icon_plus.png') no-repeat right 22px $secondaryColor;
+            box-shadow: none;
+          }
+          &.active {
+            background: url('../images/icon_minus.png') no-repeat right 22px $secondaryColor;
+            &:hover,
+            &:focus {
+              background: url('../images/icon_minus.png') no-repeat right 22px $secondaryColor;
+              box-shadow: none;
             }
+          }
         }
+        .accordion-content {
+          position: relative;
+          padding: 1em 1em 2em 1em;
+          background: #fff;
+          line-height: 1.65em;
+          .image {
+            float: left;
+            margin: 0 30px 0 0;
+            img {
+              width: 300px;
+            }
+            @media (max-width: 700px) {
+              float: none;
+              clear: both;
+              margin: 0;
+              img {
+                width: 100%;
+              }
+            }
+          }
+          ul {
+            overflow: hidden;
+            li {
+              a {
+                background-image: url('../images/icon_list01.png');
+                background-position: left 15px;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                font-size: 1em;
+                padding: 5px 5px 5px 20px;
+                color: $color-word;
+                &:hover,
+                &:focus {
+                  background-image: url('../images/icon_list01.png');
+                  background-position: left 14px;
+                  background-color: transparent;
+                  background-repeat: no-repeat;
+                  color: $primaryColor;
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
 }
 .col-md-6 .accordionblock {
-    .accordion {
-        li {
-            .accordion_content {
-                .image {
-                    width: 300px;
-                    float: none;
-                    margin: 0 auto;
-                    img {
-                        margin: 0 auto;
-                    }
-                    @media(max-width: 700px) {
-                        width: auto;
-                    }
-                }
-            }
+  .accordion {
+    li {
+      .accordion_content {
+        .image {
+          width: 300px;
+          float: none;
+          margin: 0 auto;
+          img {
+            margin: 0 auto;
+          }
+          @media (max-width: 700px) {
+            width: auto;
+          }
         }
+      }
     }
+  }
 }
 .col-md-4 .accordionblock {
-    .accordion {
-        li {
-            .accordion_content {
-                .image {
-                    float: none;
-                    margin: 0;
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
+  .accordion {
+    li {
+      .accordion_content {
+        .image {
+          float: none;
+          margin: 0;
+          img {
+            width: 100%;
+          }
         }
+      }
     }
+  }
 }
 //相關資訊 石綿危害資訊
 .relatedbg {
-    position: relative;
-    &:before {
-        content: '';
-        width: 200%;
-        height: 800px;
-        position: absolute;
-        top: -40px;
-        transform: skewY(177deg);
-        background-color: #efeff3;
-        @include screen('tablet') {
-            height: 1100px;
-        }
-        @media(max-width: 729px) {
-            height: 2050px;
-        }
+  position: relative;
+  &:before {
+    content: '';
+    width: 200%;
+    height: 800px;
+    position: absolute;
+    top: -40px;
+    transform: skewY(177deg);
+    background-color: #efeff3;
+    @include screen('tablet') {
+      height: 1100px;
     }
+    @media (max-width: 729px) {
+      height: 2050px;
+    }
+  }
 }
 .related_information {
-    text-align: center;
-    &:before {
-        content: '';
-        width: 3px;
-        height: 125px;
-        background-color: $primaryColor;
-        position: absolute;
-        bottom: -80px;
-        left: 70px;
-        transform: rotate(30deg);
-        z-index: 99;
-        @include screen('tablet') {
-            left: 40px;
+  text-align: center;
+  &:before {
+    content: '';
+    width: 3px;
+    height: 125px;
+    background-color: $primaryColor;
+    position: absolute;
+    bottom: -80px;
+    left: 70px;
+    transform: rotate(30deg);
+    z-index: 99;
+    @include screen('tablet') {
+      left: 40px;
+    }
+  }
+  h2 {
+    @extend .block02_h2;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      width: 32%;
+      margin: 0 20px 20px 0;
+      background-color: #fff;
+      float: left;
+      list-style-type: none;
+      height: 290px;
+      position: relative;
+      @media (min-width: 1200px) {
+        &:nth-child(3n) {
+          margin-right: 0;
         }
-    }
-    h2 {
-        @extend .block02_h2;
-    }
-    ul {
+      }
+      @media (max-width: 1199px) and (min-width: 992px) {
+        width: 31.5%;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 991px) and (min-width: 730px) {
+        width: 48.5%;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 729px) {
+        width: 100%;
+        margin-right: 0;
+      }
+      > h3 {
         margin: 0;
-        padding: 0;
-        li {
-            width: 32%;
-            margin: 0 20px 20px 0;
-            background-color: #fff;
-            float: left;
-            list-style-type: none;
-            height: 290px;
-            position: relative;
-            @media(min-width: 1200px) {
-                &:nth-child(3n) {
-                    margin-right: 0;
-                }
-            }
-            @media(max-width: 1199px)and (min-width: 992px) {
-                width: 31.5%;
-                &:nth-child(3n) {
-                    margin-right: 0;
-                }
-            }
-            @media(max-width: 991px)and (min-width: 730px) {
-                width: 48.5%;
-                &:nth-child(2n) {
-                    margin-right: 0;
-                }
-            }
-            @media(max-width: 729px) {
-                width: 100%;
-                margin-right: 0;
-            }
-            >h3 {
-                margin: 0;
-                padding: 20px;
-                text-align: center;
-                color: #fff;
-                background-color: $secondaryColor;
-            }
-            &:nth-child(2) {
-                >h3 {
-                    background-color: $primaryColor;
-                }
-            }
-            &:nth-child(3) {
-                >h3 {
-                    background-color: $lightColor;
-                }
-            }
-            &:nth-child(4) {
-                >h3 {
-                    background-color: $primaryColor;
-                }
-            }
-            &:nth-child(5) {
-                >h3 {
-                    background-color: $lightColor;
-                }
-            }
-            ul {
-                margin: 20px 30px;
-                padding: 0;
-                text-align: left;
-                li {
-                    width: 100%;
-                    float: none;
-                    clear: both;
-                    margin: 0 0 6px;
-                    height: auto;
-                    a {
-                        padding: 0 0 0 10px;
-                        text-align: left;
-                        position: relative;
-                        display: block;
-                        line-height: 1.8em;
-                        color: $color-word;
-                        background-image: url('../images/icon_information.png');
-                        background-position: 0 11px;
-                        background-repeat: no-repeat;
-                        @include text-overflow;
-                        &:hover {
-                            color: $primaryColor;
-                        }
-                    }
-                    &.multi-line {
-                        a {
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: normal;
-                            line-height: 1.8em;
-                            height: 9em;
-                            display: -webkit-box;
-                            -webkit-line-clamp: 5;
-                            -webkit-box-orient: vertical;
-                            text-align: left;
-                            padding: 0;
-                            background-image: none;
-                        }
-                    }
-                }
-            }
-            .more {
-                position: absolute;
-                bottom: 15px;
-                left: 50%;
-                width: 130px;
-                margin-left: -65px;
-                font-size: 0.938em;
-                a {
-                    color: $aHover;
-                    background-color: lighten($primaryColor, 48);
-                    width: auto;
-                    text-align: center;
-                    padding: .3em 2em;
-                    border-radius: 50px;
-                    border: none;
-                    transition: .5s;
-                    &:hover {
-                        background-color: $aHover;
-                        color: #fff;
-                    }
-                }
-            }
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+        background-color: $secondaryColor;
+      }
+      &:nth-child(2) {
+        > h3 {
+          background-color: $primaryColor;
         }
+      }
+      &:nth-child(3) {
+        > h3 {
+          background-color: $lightColor;
+        }
+      }
+      &:nth-child(4) {
+        > h3 {
+          background-color: $primaryColor;
+        }
+      }
+      &:nth-child(5) {
+        > h3 {
+          background-color: $lightColor;
+        }
+      }
+      ul {
+        margin: 20px 30px;
+        padding: 0;
+        text-align: left;
+        li {
+          width: 100%;
+          float: none;
+          clear: both;
+          margin: 0 0 6px;
+          height: auto;
+          a {
+            padding: 0 0 0 10px;
+            text-align: left;
+            position: relative;
+            display: block;
+            line-height: 1.8em;
+            color: $color-word;
+            background-image: url('../images/icon_information.png');
+            background-position: 0 11px;
+            background-repeat: no-repeat;
+            @include text-overflow;
+            &:hover {
+              color: $primaryColor;
+            }
+          }
+          &.multi-line {
+            a {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: normal;
+              line-height: 1.8em;
+              height: 9em;
+              display: -webkit-box;
+              -webkit-line-clamp: 5;
+              -webkit-box-orient: vertical;
+              text-align: left;
+              padding: 0;
+              background-image: none;
+            }
+          }
+        }
+      }
+      .more {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        width: 130px;
+        margin-left: -65px;
+        font-size: 0.938em;
+        a {
+          color: $aHover;
+          background-color: lighten($primaryColor, 48);
+          width: auto;
+          text-align: center;
+          padding: 0.3em 2em;
+          border-radius: 50px;
+          border: none;
+          transition: 0.5s;
+          &:hover {
+            background-color: $aHover;
+            color: #fff;
+          }
+        }
+      }
     }
+  }
 }
 //圖文訊息輪播 汞水俣公約懶人包
 .message_block {
-    text-align: center;
-    h2 {
-        @extend .block02_h2;
-    }
-    .message_slider {
-        margin-bottom: 20px;
-        .message_content {
-            padding: 0 60px;
-            .more {
-                clear: none;
-                float: right;
-                text-align: left;
-                a {
-                    color: $aHover;
-                    background-color: lighten($primaryColor, 48);
-                    width: auto;
-                    text-align: center;
-                    padding: .3em 2em;
-                    border-radius: 50px;
-                    border: none;
-                    transition: .5s;
-                    &:hover {
-                        background-color: $aHover;
-                        color: #fff;
-                    }
-                }
-            }
-        }
-    }
-    .image {
-        float: left;
-        margin-right: 30px;
-        width: 400px;
-        img {
-            width: 400px;
-        }
-        @include screen('tablet') {
-            width: 300px;
-            img {
-                width: 300px;
-            }
-        }
-        @include screen('mobile') {
-            float: none;
-            clear: both;
-            margin: 0 0 20px;
-            width: 100%;
-            img {
-                width: 100%;
-            }
-        }
-    }
-    h3 {
-        color: $primaryColor;
-        margin: 0 0 20px;
+  text-align: center;
+  h2 {
+    @extend .block02_h2;
+  }
+  .message_slider {
+    margin-bottom: 20px;
+    .message_content {
+      padding: 0 60px;
+      .more {
+        clear: none;
+        float: right;
         text-align: left;
-        line-height: 1.5em;
+        a {
+          color: $aHover;
+          background-color: lighten($primaryColor, 48);
+          width: auto;
+          text-align: center;
+          padding: 0.3em 2em;
+          border-radius: 50px;
+          border: none;
+          transition: 0.5s;
+          &:hover {
+            background-color: $aHover;
+            color: #fff;
+          }
+        }
+      }
     }
-    p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.8em;
-        height: 9em;
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        -webkit-box-orient: vertical;
-        text-align: left;
-        margin: 0 0 15px;
+  }
+  .image {
+    float: left;
+    margin-right: 30px;
+    width: 400px;
+    img {
+      width: 400px;
     }
+    @include screen('tablet') {
+      width: 300px;
+      img {
+        width: 300px;
+      }
+    }
+    @include screen('mobile') {
+      float: none;
+      clear: both;
+      margin: 0 0 20px;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  h3 {
+    color: $primaryColor;
+    margin: 0 0 20px;
+    text-align: left;
+    line-height: 1.5em;
+  }
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    height: 9em;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-align: left;
+    margin: 0 0 15px;
+  }
 }
 //movie_block 影片嵌入
 .movie_block {
-    text-align: center;
-    @include screen('tablet') {
-        height: auto
+  text-align: center;
+  @include screen('tablet') {
+    height: auto;
+  }
+  h2 {
+    @extend .block02_h2;
+  }
+  .movie_slider {
+    background-color: $primaryColor;
+    color: #fff;
+    margin-bottom: 20px;
+    iframe {
+      margin: 0;
     }
-    h2 {
-        @extend .block02_h2;
+    p {
+      padding: 15px 30px 20px;
+      text-align: left;
+      margin: 0;
+      line-height: 1.8em;
     }
-    .movie_slider {
-        background-color: $primaryColor;
-        color: #fff;
-        margin-bottom: 20px;
-        iframe {
-            margin: 0;
-        }
-        p {
-            padding: 15px 30px 20px;
-            text-align: left;
-            margin: 0;
-            line-height: 1.8em;
-        }
-        .slick-next {
-            background-image: url('../vendor/slick/icon_arrow_right4.png');
-            background-color: transparent;
-        }
-        .slick-prev {
-            background-image: url('../vendor/slick/icon_arrow_left4.png');
-            background-color: transparent;
-        }
+    .slick-next {
+      background-image: url('../vendor/slick/icon_arrow_right4.png');
+      background-color: transparent;
     }
+    .slick-prev {
+      background-image: url('../vendor/slick/icon_arrow_left4.png');
+      background-color: transparent;
+    }
+  }
 }
 //photo_block 圖片banner輪播
 .photo_block {
-    text-align: center;
-    @include screen('tablet') {
-        height: auto;
-        margin-bottom: 50px;
-    }
-    h2 {
-        @extend .block02_h2;
-    }
-    .photo_slider {
-        background-color: $primaryColor;
+  text-align: center;
+  @include screen('tablet') {
+    height: auto;
+    margin-bottom: 50px;
+  }
+  h2 {
+    @extend .block02_h2;
+  }
+  .photo_slider {
+    background-color: $primaryColor;
+    color: #fff;
+    margin-bottom: 20px;
+    .photo_content {
+      position: relative;
+      a {
+        display: block;
+      }
+      .moviebtn {
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        z-index: 9;
+        img {
+          width: 80px;
+        }
+      }
+      .image {
+        position: relative;
+        margin: 0;
+        z-index: 8;
+        width: 100%;
+        img {
+          margin: 0;
+          width: 100%;
+          height: 315px;
+          @include screen('tablet') {
+            height: auto;
+          }
+        }
+      }
+      p {
+        padding: 15px 30px 20px;
+        text-align: left;
+        margin: 0;
+        overflow: hidden;
+        @include box-sizing;
+        height: 100px;
         color: #fff;
-        margin-bottom: 20px;
-        .photo_content {
-            position: relative;
-            a {
-                display: block;
-            }
-            .moviebtn {
-                position: absolute;
-                top: 35%;
-                left: 40%;
-                z-index: 9;
-                img {
-                    width: 80px;
-                }
-            }
-            .image {
-                position: relative;
-                margin: 0;
-                z-index: 8;
-                width: 100%;
-                img {
-                    margin: 0;
-                    width: 100%;
-                    height: 315px;
-                    @include screen('tablet') {
-                        height: auto;
-                    }
-                }
-            }
-            p {
-                padding: 15px 30px 20px;
-                text-align: left;
-                margin: 0;
-                overflow: hidden;
-                @include box-sizing;
-                height: 100px;
-                color: #fff;
-                @include screen('tablet') {
-                    height: auto;
-                }
-            }
-            a {
-                display: block;
-                text-align: center;
-                img {
-                    margin: 0 auto;
-                }
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    border: 5px solid #ffc000;
-                    display: none;
-                }
-                &:focus {
-                    padding: 5px;
-                    img {}
-                    &:before {
-                        display: block;
-                    }
-                }
-            }
+        @include screen('tablet') {
+          height: auto;
         }
-        .slick-next {
-            background-image: url('../vendor/slick/icon_arrow_right4.png');
-            background-color: transparent;
+      }
+      a {
+        display: block;
+        text-align: center;
+        img {
+          margin: 0 auto;
         }
-        .slick-prev {
-            background-image: url('../vendor/slick/icon_arrow_left4.png');
-            background-color: transparent;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border: 5px solid #ffc000;
+          display: none;
         }
+        &:focus {
+          padding: 5px;
+          img {
+          }
+          &:before {
+            display: block;
+          }
+        }
+      }
     }
+    .slick-next {
+      background-image: url('../vendor/slick/icon_arrow_right4.png');
+      background-color: transparent;
+    }
+    .slick-prev {
+      background-image: url('../vendor/slick/icon_arrow_left4.png');
+      background-color: transparent;
+    }
+  }
 }
 //Facebook嵌入
 .fbblock {
-    text-align: center;
-    width: 430px;
-    margin: 0 auto;
-    @media(max-width: 480px) {
-        width: 100%;
-    }
-    h2 {
-        @extend .block02_h2;
-    }
-    // .fb-page{
-    //     width: 500px;
-    //     height: 445px;
-    //     border:1px solid red;
-    //     @media(max-width: 480px){
-    //          width: 100%;
-    //     height: 445px;
-    //     }
-    // }
-    .more {
-        margin-top: 20px;
-    }
+  text-align: center;
+  width: 430px;
+  margin: 0 auto;
+  @include screen('mobile') {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+  h2 {
+    @extend .block02_h2;
+  }
+  // .fb-page{
+  //     width: 500px;
+  //     height: 445px;
+  //     border:1px solid red;
+  //     @media(max-width: 480px){
+  //          width: 100%;
+  //     height: 445px;
+  //     }
+  // }
+  .more {
+    margin-top: 20px;
+  }
 }
 //圖片連結1
 .ad_block,
 .ad2_block {
-    text-align: center;
-    h2 {
-        @extend .block02_h2;
+  text-align: center;
+  h2 {
+    @extend .block02_h2;
+  }
+  .adSlider {
+    margin-bottom: 20px;
+    @include gutter(70px);
+    @include screen('mobile') {
+      @include gutter();
     }
-    .adSlider {
-        margin-bottom: 20px;
-        @include gutter(70px);
-        @include screen('mobile') {
-            @include gutter();
-        }
-        .slick-prev {
-            background: url(../vendor/slick/icon_arrow_left3.png) no-repeat center center;
-            left: -15px;
-            border: 1px solid #ccc !important;
-            border-radius: 50% !important;
-            width: 45px !important;
-            height: 45px !important;
-            background-size: 30% !important;
-            background-color: #fff;
-            @include screen('xs_mobile') {
-                left: 0;
-            }
-        }
-        .slick-next {
-            background: url(../vendor/slick/icon_arrow_right3.png) no-repeat center center;
-            right: -15px;
-            border: 1px solid #ccc !important;
-            border-radius: 50% !important;
-            width: 45px !important;
-            height: 45px !important;
-            background-size: 30% !important;
-            background-color: #fff;
-            @include screen('xs_mobile') {
-                right: 0;
-            }
-        }
-        .img-container {
-            width: 215px;
-            height: 80px;
-            margin: 0px 15px;
-            @include screen('mobile') {
-                padding: 0 10px;
-            }
-            @include screen('xs_mobile') {
-                padding: 0 20px;
-            }
-            @media(max-width: 520px) {
-                padding: 0 50px;
-            }
-            @media(max-width: 480px) {
-                padding: 0 60px;
-            }
-            @media(max-width: 400px) {
-                padding: 0 30px;
-            }
-            a {
-                display: block;
-                text-align: center;
-                img {
-                    margin: 0 auto;
-                }
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    border: 2px solid #ffc000;
-                    display: none;
-                }
-                &:focus {
-                    &:before {
-                        display: block;
-                    }
-                }
-            }
-        }
+    .slick-prev {
+      background: url(../vendor/slick/icon_arrow_left3.png) no-repeat center center;
+      left: -15px;
+      border: 1px solid #ccc !important;
+      border-radius: 50% !important;
+      width: 45px !important;
+      height: 45px !important;
+      background-size: 30% !important;
+      background-color: #fff;
+      @include screen('xs_mobile') {
+        left: 0;
+      }
     }
+    .slick-next {
+      background: url(../vendor/slick/icon_arrow_right3.png) no-repeat center center;
+      right: -15px;
+      border: 1px solid #ccc !important;
+      border-radius: 50% !important;
+      width: 45px !important;
+      height: 45px !important;
+      background-size: 30% !important;
+      background-color: #fff;
+      @include screen('xs_mobile') {
+        right: 0;
+      }
+    }
+    .img-container {
+      width: 215px;
+      height: 80px;
+      margin: 0px 15px;
+      @include screen('mobile') {
+        padding: 0 10px;
+      }
+      @include screen('xs_mobile') {
+        padding: 0 20px;
+      }
+      @media (max-width: 520px) {
+        padding: 0 50px;
+      }
+      @media (max-width: 480px) {
+        padding: 0 60px;
+      }
+      @media (max-width: 400px) {
+        padding: 0 30px;
+      }
+      a {
+        display: block;
+        text-align: center;
+        img {
+          margin: 0 auto;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border: 2px solid #ffc000;
+          display: none;
+        }
+        &:focus {
+          &:before {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
 //圖片連結2
 .ad2_block {
-    .adSlider2 {
-        margin-bottom: 20px;
-        @include gutter(70px);
-        @include screen('mobile') {
-            @include gutter();
-        }
-        .slick-prev {
-            background: url(../vendor/slick/icon_arrow_left3.png) no-repeat center center;
-            left: -15px;
-            border: 1px solid #ccc !important;
-            border-radius: 50% !important;
-            width: 45px !important;
-            height: 45px !important;
-            background-size: 30% !important;
-            background-color: #fff;
-            @include screen('xs_mobile') {
-                left: 0;
-            }
-        }
-        .slick-next {
-            background: url(../vendor/slick/icon_arrow_right3.png) no-repeat center center;
-            right: -15px;
-            border: 1px solid #ccc !important;
-            border-radius: 50% !important;
-            width: 45px !important;
-            height: 45px !important;
-            background-size: 30% !important;
-            background-color: #fff;
-            @include screen('xs_mobile') {
-                right: 0;
-            }
-        }
-        .img-container {
-            width: 223px;
-            height: 223px;
-            margin: 0px 15px;
-            position: relative;
-            @media(max-width: 768px) {
-                padding: 0 10px;
-            }
-            @include screen('xs_mobile') {
-                padding: 0 50px;
-            }
-            @media(max-width: 400px) {
-                padding: 0 0px;
-            }
-            a {
-                display: block;
-                text-align: center;
-                img {
-                    margin: 0 auto;
-                    max-height: 100%;
-                    max-width: 100%;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                }
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    border: 2px solid #ffc000;
-                    display: none;
-                }
-                &:focus {
-                    &:before {
-                        display: block;
-                    }
-                }
-            }
-        }
+  .adSlider2 {
+    margin-bottom: 20px;
+    @include gutter(70px);
+    @include screen('mobile') {
+      @include gutter();
     }
+    .slick-prev {
+      background: url(../vendor/slick/icon_arrow_left3.png) no-repeat center center;
+      left: -15px;
+      border: 1px solid #ccc !important;
+      border-radius: 50% !important;
+      width: 45px !important;
+      height: 45px !important;
+      background-size: 30% !important;
+      background-color: #fff;
+      @include screen('xs_mobile') {
+        left: 0;
+      }
+    }
+    .slick-next {
+      background: url(../vendor/slick/icon_arrow_right3.png) no-repeat center center;
+      right: -15px;
+      border: 1px solid #ccc !important;
+      border-radius: 50% !important;
+      width: 45px !important;
+      height: 45px !important;
+      background-size: 30% !important;
+      background-color: #fff;
+      @include screen('xs_mobile') {
+        right: 0;
+      }
+    }
+    .img-container {
+      width: 223px;
+      height: 223px;
+      margin: 0px 15px;
+      position: relative;
+      @media (max-width: 768px) {
+        padding: 0 10px;
+      }
+      @include screen('xs_mobile') {
+        padding: 0 50px;
+      }
+      @media (max-width: 400px) {
+        padding: 0 0px;
+      }
+      a {
+        display: block;
+        text-align: center;
+        img {
+          margin: 0 auto;
+          max-height: 100%;
+          max-width: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border: 2px solid #ffc000;
+          display: none;
+        }
+        &:focus {
+          &:before {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

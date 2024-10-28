@@ -1622,6 +1622,9 @@
   text-align: center;
   width: 430px;
   margin: 0 auto;
+  @include screen('mobile') {
+    display: none;
+  }
   @media (max-width: 480px) {
     width: 100%;
   }

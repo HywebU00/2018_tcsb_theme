@@ -7315,6 +7315,11 @@ a:focus {
   width: 430px;
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  .fbblock {
+    display: none;
+  }
+}
 @media (max-width: 480px) {
   .fbblock {
     width: 100%;
