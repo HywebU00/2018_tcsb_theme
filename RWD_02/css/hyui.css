@@ -3432,7 +3432,7 @@ img.img-responsive {
 .search .btn_grp a {
   background: #0057ab;
   border: 1px solid #003d78;
-  color: #FFF;
+  color: #fff;
   box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.08);
   border-radius: 4px;
   min-width: 4em;
@@ -3578,7 +3578,7 @@ img.img-responsive {
   clear: both;
 }
 .search.m_search .keywordHot a {
-  color: #FFF;
+  color: #fff;
 }
 .search.m_search .keywordHot a:hover, .search.m_search .keywordHot a:focus {
   color: #0057ab;
@@ -3595,7 +3595,7 @@ img.img-responsive {
 }
 @media screen and (max-width: 767px) {
   .header.fixed {
-    background: #FFF;
+    background: #fff;
   }
 }
 .header.fixed > .container {
@@ -3604,7 +3604,7 @@ img.img-responsive {
   background-color: transparent !important;
 }
 .header.fixed .menu > ul > li > a {
-  color: #FFF;
+  color: #fff;
 }
 .header.fixed .menu > ul > li.hasChild > a:after {
   border-color: #fff;
@@ -5109,10 +5109,10 @@ body.noscroll {
 .main .accesskey {
   color: #fafafa;
 }
-.main h1 {
+.main h2 {
   line-height: 1.25em;
 }
-.main h1.title {
+.main h2.title {
   color: #0190d4;
   border-bottom: 1px solid #0190d4;
   padding: 0px 0px 6px;
