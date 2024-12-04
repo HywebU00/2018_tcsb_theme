@@ -5065,10 +5065,10 @@ body.noscroll {
 .main .accesskey {
   color: #79a201;
 }
-.main h1 {
+.main h2 {
   line-height: 1.25em;
 }
-.main h1.title {
+.main h2.title {
   color: #53bbc8;
   border-bottom: 1px solid #53bbc8;
   padding: 0px 0px 6px;
