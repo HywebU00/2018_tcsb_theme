@@ -8144,21 +8144,25 @@ a:focus {
 }
 .cp article h3 {
   font-size: 1.438em;
-  color: #071f13;
-  margin-left: 10px;
+  color: #187448;
 }
 .cp article h4 {
   font-size: 1.23em;
-  color: #071f13;
-  margin-left: 20px;
+  color: #45641a;
+  margin-left: 15px;
+}
+.cp article h4 + p {
+  margin-left: 15px;
 }
 .cp article h5 {
   font-size: 1.15em;
-  color: black;
+  color: #293c0f;
+  margin-left: 25px;
 }
 .cp article h6 {
   font-size: 1.08em;
-  color: black;
+  color: #0d1305;
+  margin-left: 35px;
 }
 .cp article h2 + h3,
 .cp article h3 + h4,
@@ -8438,7 +8442,7 @@ a:focus {
 }
 .cpTb table td {
   color: #313131;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   padding: 10px;
   position: relative;
   word-break: break-all;
@@ -8448,7 +8452,7 @@ a:focus {
   text-decoration: underline;
 }
 .cpTb table td a:hover {
-  color: #CC0000;
+  color: #cc0000;
   text-decoration: none;
 }
 .cpTb table td ul {
@@ -8537,7 +8541,7 @@ a:focus {
 .cp article table td {
   vertical-align: top;
   padding: 10px 7px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   white-space: normal;
 }
 .cp article table th p,
@@ -8545,7 +8549,7 @@ a:focus {
   margin: 0;
 }
 .cp article table th {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
 }
 .cp article table.noBorder {
   width: auto;
@@ -8558,7 +8562,7 @@ a:focus {
   padding: 10px 7px;
 }
 .cp article table.noBorder th {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
 }
 .cp article table.noBorder th[scope=row] {
   text-align: right;
@@ -8578,7 +8582,7 @@ a:focus {
   clear: both;
   margin: 15px auto;
   padding: 0;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   width: 100%;
   height: 400px;
   overflow: hidden;
@@ -8809,7 +8813,7 @@ a:focus {
 .page404 .bolck404 .web404 .input-group .btn {
   background: #7cb52f;
   border: 1px solid #7cb52f;
-  color: #FFF;
+  color: #fff;
   padding: 0.5em 2em !important;
   margin: 0;
 }
