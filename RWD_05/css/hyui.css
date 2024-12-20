@@ -8959,7 +8959,7 @@ a:focus {
 .lp .list ul li,
 .lp .list ol li {
   padding: 1em 0;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
   position: relative;
 }
 .lp .list ul li a,
@@ -9001,7 +9001,7 @@ a:focus {
 .lp .list ul li time,
 .lp .list ol li time {
   display: block;
-  color: #AAA;
+  color: #aaa;
   font-size: 0.938em;
 }
 .lp .album {
@@ -9062,7 +9062,7 @@ a:focus {
   width: 100%;
   margin: 0 0 30px;
   min-height: 320px;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0px;
   color: #353535;
@@ -9175,8 +9175,8 @@ a:focus {
 .listTb table th {
   padding: 10px;
   color: #333;
-  background-color: #E6E6E6;
-  border: 1px solid #CCC;
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
   border-bottom-width: 2px;
   border-bottom-color: #ddd;
   text-align: center;
@@ -9184,7 +9184,7 @@ a:focus {
 .listTb table td {
   padding: 10px;
   text-align: left;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
 }
 .listTb table td a {
   color: #2968b0;
@@ -9222,8 +9222,8 @@ a:focus {
   padding: 10px;
   color: #333;
   border: none;
-  border-top: 2px solid #CCC;
-  border-bottom: 2px solid #CCC;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
   background-color: #fff;
   text-align: center;
 }
@@ -9231,7 +9231,7 @@ a:focus {
   padding: 13px 10px;
   text-align: left;
   border: none;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
 }
 .listTb2 table td a {
   color: #16375d;
@@ -9287,7 +9287,7 @@ a:focus {
 .listTb3 table th {
   padding: 15px 10px;
   border: none;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
   background-color: #fff;
   text-align: left;
   width: 15%;
@@ -9298,7 +9298,7 @@ a:focus {
   padding: 15px 10px;
   text-align: left;
   border: none;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
 }
 .listTb3 table td a {
   color: #16375d;
@@ -9308,42 +9308,52 @@ a:focus {
 }
 
 @media (max-width: 767px) {
-  .listTb table, .listTb2 table {
+  .listTb table,
+  .listTb2 table {
     width: 100%;
   }
-  .listTb table tr, .listTb2 table tr {
+  .listTb table tr,
+  .listTb2 table tr {
     margin: 0 0 20px 0;
     display: block;
   }
-  .listTb table tr th, .listTb2 table tr th {
+  .listTb table tr th,
+  .listTb2 table tr th {
     display: none;
   }
-  .listTb table tr td, .listTb2 table tr td {
+  .listTb table tr td,
+  .listTb2 table tr td {
     display: block;
-    border: 1px solid #CCC;
+    border: 1px solid #ccc;
     margin: -1px 0 0 0;
   }
-  .listTb table tr td:before, .listTb2 table tr td:before {
+  .listTb table tr td:before,
+  .listTb2 table tr td:before {
     content: attr(data-title) "：";
     display: inline-block;
     color: #666;
   }
-  .listTb table tr td:empty, .listTb2 table tr td:empty {
+  .listTb table tr td:empty,
+  .listTb2 table tr td:empty {
     display: none;
   }
-  .listTb table tr td.date, .listTb2 table tr td.date {
+  .listTb table tr td.date,
+  .listTb2 table tr td.date {
     white-space: normal;
   }
-  .listTb table .aCenter, .listTb2 table .aCenter {
+  .listTb table .aCenter,
+  .listTb2 table .aCenter {
     text-align: left;
   }
-  .listTb table .aRight, .listTb2 table .aRight {
+  .listTb table .aRight,
+  .listTb2 table .aRight {
     text-align: left;
   }
   .listTb3 table {
     width: 100%;
   }
-  .listTb3 table th, .listTb3 table td {
+  .listTb3 table th,
+  .listTb3 table td {
     display: block;
     width: 100%;
   }
@@ -9408,12 +9418,16 @@ a:focus {
   padding: 0 0 0 40px;
   border-left: 6px solid #96bbe6;
 }
+.eventblock .event > .topic {
+  border-bottom: 1px dotted #333;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
 .eventblock .event > .topic a {
   display: block;
   position: relative;
-  border-bottom: 1px dotted #333;
   color: #333;
-  padding: 8px 30px 8px 0;
+  padding: 0 30px 0 0;
 }
 .eventblock .event > .topic a:after {
   content: "";
@@ -9423,13 +9437,13 @@ a:focus {
   border-color: transparent #666 #666 transparent;
   position: absolute;
   right: 5px;
-  top: 12px;
+  top: 4px;
   transform: rotate(45deg);
   transition: 0.5s;
 }
 .eventblock .event > .topic a.trunicon:after {
   transform: rotate(-135deg);
-  top: 17px;
+  top: 10px;
 }
 .eventblock .event > .topic a:focus {
   box-shadow: none;

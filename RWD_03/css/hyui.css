@@ -7773,7 +7773,7 @@ a:focus {
 .lp .list ul li,
 .lp .list ol li {
   padding: 1em 0;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
   position: relative;
 }
 .lp .list ul li a,
@@ -7815,7 +7815,7 @@ a:focus {
 .lp .list ul li time,
 .lp .list ol li time {
   display: block;
-  color: #AAA;
+  color: #aaa;
   font-size: 0.938em;
 }
 .lp .album {
@@ -7876,7 +7876,7 @@ a:focus {
   width: 100%;
   margin: 0 0 30px;
   min-height: 320px;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   background-color: #eee;
   border-radius: 4px;
   padding: 0px;
@@ -7990,8 +7990,8 @@ a:focus {
 .listTb table th {
   padding: 10px;
   color: #333;
-  background-color: #E6E6E6;
-  border: 1px solid #CCC;
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
   border-bottom-width: 2px;
   border-bottom-color: #ddd;
   text-align: center;
@@ -7999,7 +7999,7 @@ a:focus {
 .listTb table td {
   padding: 10px;
   text-align: left;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
 }
 .listTb table td a {
   color: #28404d;
@@ -8116,12 +8116,16 @@ a:focus {
   padding: 0 0 0 40px;
   border-left: 6px solid #aac5d4;
 }
+.eventblock .event > .topic {
+  border-bottom: 1px dotted #333;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
 .eventblock .event > .topic a {
   display: block;
   position: relative;
-  border-bottom: 1px dotted #333;
   color: #333;
-  padding: 8px 30px 8px 0;
+  padding: 0 30px 0 0;
 }
 .eventblock .event > .topic a:after {
   content: "";
@@ -8131,13 +8135,13 @@ a:focus {
   border-color: transparent #666 #666 transparent;
   position: absolute;
   right: 5px;
-  top: 12px;
+  top: 4px;
   transform: rotate(45deg);
   transition: 0.5s;
 }
 .eventblock .event > .topic a.trunicon:after {
   transform: rotate(-135deg);
-  top: 17px;
+  top: 10px;
 }
 .eventblock .event > .topic a:focus {
   box-shadow: none;
